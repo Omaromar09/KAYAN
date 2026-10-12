@@ -31,6 +31,33 @@ export const translations = {
     'hero.subtitle': 'Architectural drape, tactile permanence, and refined silhouettes engineered for quiet distinction.',
     'hero.cta_primary': 'Explore Autumn Capsule',
     'hero.cta_secondary': 'View Editorial Lookbook',
+    'hero.slide2_badge': 'Homme Tailoring',
+    'hero.slide2_title': 'RIGOR IN PROPORTION',
+    'hero.slide2_subtitle': 'Double-breasted camel overcoats and Okayama selvedge denim built to withstand generational wear.',
+    'hero.slide2_cta1': 'Explore Men &rarr;',
+    'hero.slide2_cta2': 'Book Private Fitting',
+    'hero.slide3_badge': 'Kayan Alchimie',
+    'hero.slide3_title': 'BOTANICAL ESSENCE',
+    'hero.slide3_subtitle': 'Smoked Cambodian oud, Damascus rose hydrosols, and cellular sculpting treatments.',
+    'hero.slide3_cta1': 'Discover Fragrance &rarr;',
+
+    // Marquee
+    'marquee.1': 'ARCHITECTURAL SILHOUETTES',
+    'marquee.2': 'ETHICAL NOBLE FIBERS',
+    'marquee.3': 'THE EQUINOX ARCHIVE',
+    'marquee.4': 'QUIET DISTINCTION',
+    'marquee.5': 'FORM MEETS EXISTENCE',
+    'marquee.6': 'GLOBAL EXPRESS DELIVERY',
+
+    // Trending Categories
+    'trending.new_in': 'New In',
+    'trending.coords': 'Coords',
+    'trending.modest': 'Modest',
+    'trending.workwear': 'Workwear',
+    'trending.denim': 'Denim',
+    'trending.neutrals': 'Neutrals',
+    'trending.coats': 'Coats',
+    'trending.cashmere': 'Cashmere',
 
     // Trending & Categories
     'section.trending_now': 'Trending Now',
@@ -163,6 +190,33 @@ export const translations = {
     'hero.subtitle': 'قصّات معمارية، وخامات مستدامة، وأناقة راقية صُممت لحضور هادئ واستثنائي.',
     'hero.cta_primary': 'استكشف تشكيلة الخريف',
     'hero.cta_secondary': 'شاهد كتالوج الإطلالات',
+    'hero.slide2_badge': 'تفصيل رجالي رفيع',
+    'hero.slide2_title': 'الدقة في التناسب',
+    'hero.slide2_subtitle': 'معاطف صوف الجمل الفاخرة وجينز أوكاياما المعماري المصمم ليدوم عبر الأجيال.',
+    'hero.slide2_cta1': 'استكشف تشكيلة الرجال &larr;',
+    'hero.slide2_cta2': 'حجز جلسة قياس خاصة',
+    'hero.slide3_badge': 'كيمياء كَيَان العطرية',
+    'hero.slide3_title': 'جوهر الطبيعة النقي',
+    'hero.slide3_subtitle': 'العود الكمبودي المدخن، وخلاصة الورد الدمشقي، ومركبات العناية الخلوية الفاخرة.',
+    'hero.slide3_cta1': 'اكتشف العطور والجمال &larr;',
+
+    // Marquee
+    'marquee.1': 'قصّات معمارية فاخرة',
+    'marquee.2': 'أنسجة نبيلة مستدامة',
+    'marquee.3': 'أرشيف الاعتدال الخريفي',
+    'marquee.4': 'تميز هادئ وراقٍ',
+    'marquee.5': 'حيث يلتقي الشكل بالوجود',
+    'marquee.6': 'شحن دولي سريع ومباشر',
+
+    // Trending Categories
+    'trending.new_in': 'وصل حديثاً',
+    'trending.coords': 'أطقم متناسقة',
+    'trending.modest': 'أزياء محتشمة',
+    'trending.workwear': 'أزياء العمل',
+    'trending.denim': 'دنيم فاخر',
+    'trending.neutrals': 'ألوان حيادية',
+    'trending.coats': 'معاطف وسترات',
+    'trending.cashmere': 'كشمير خالص',
 
     // Trending & Categories
     'section.trending_now': 'الأكثر طلباً الآن',

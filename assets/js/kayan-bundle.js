@@ -34,6 +34,33 @@ const translations = {
     'hero.subtitle': 'Architectural drape, tactile permanence, and refined silhouettes engineered for quiet distinction.',
     'hero.cta_primary': 'Explore Autumn Capsule',
     'hero.cta_secondary': 'View Editorial Lookbook',
+    'hero.slide2_badge': 'Homme Tailoring',
+    'hero.slide2_title': 'RIGOR IN PROPORTION',
+    'hero.slide2_subtitle': 'Double-breasted camel overcoats and Okayama selvedge denim built to withstand generational wear.',
+    'hero.slide2_cta1': 'Explore Men &rarr;',
+    'hero.slide2_cta2': 'Book Private Fitting',
+    'hero.slide3_badge': 'Kayan Alchimie',
+    'hero.slide3_title': 'BOTANICAL ESSENCE',
+    'hero.slide3_subtitle': 'Smoked Cambodian oud, Damascus rose hydrosols, and cellular sculpting treatments.',
+    'hero.slide3_cta1': 'Discover Fragrance &rarr;',
+
+    // Marquee
+    'marquee.1': 'ARCHITECTURAL SILHOUETTES',
+    'marquee.2': 'ETHICAL NOBLE FIBERS',
+    'marquee.3': 'THE EQUINOX ARCHIVE',
+    'marquee.4': 'QUIET DISTINCTION',
+    'marquee.5': 'FORM MEETS EXISTENCE',
+    'marquee.6': 'GLOBAL EXPRESS DELIVERY',
+
+    // Trending Categories
+    'trending.new_in': 'New In',
+    'trending.coords': 'Coords',
+    'trending.modest': 'Modest',
+    'trending.workwear': 'Workwear',
+    'trending.denim': 'Denim',
+    'trending.neutrals': 'Neutrals',
+    'trending.coats': 'Coats',
+    'trending.cashmere': 'Cashmere',
 
     // Trending & Categories
     'section.trending_now': 'Trending Now',
@@ -166,6 +193,33 @@ const translations = {
     'hero.subtitle': 'قصّات معمارية، وخامات مستدامة، وأناقة راقية صُممت لحضور هادئ واستثنائي.',
     'hero.cta_primary': 'استكشف تشكيلة الخريف',
     'hero.cta_secondary': 'شاهد كتالوج الإطلالات',
+    'hero.slide2_badge': 'تفصيل رجالي رفيع',
+    'hero.slide2_title': 'الدقة في التناسب',
+    'hero.slide2_subtitle': 'معاطف صوف الجمل الفاخرة وجينز أوكاياما المعماري المصمم ليدوم عبر الأجيال.',
+    'hero.slide2_cta1': 'استكشف تشكيلة الرجال &larr;',
+    'hero.slide2_cta2': 'حجز جلسة قياس خاصة',
+    'hero.slide3_badge': 'كيمياء كَيَان العطرية',
+    'hero.slide3_title': 'جوهر الطبيعة النقي',
+    'hero.slide3_subtitle': 'العود الكمبودي المدخن، وخلاصة الورد الدمشقي، ومركبات العناية الخلوية الفاخرة.',
+    'hero.slide3_cta1': 'اكتشف العطور والجمال &larr;',
+
+    // Marquee
+    'marquee.1': 'قصّات معمارية فاخرة',
+    'marquee.2': 'أنسجة نبيلة مستدامة',
+    'marquee.3': 'أرشيف الاعتدال الخريفي',
+    'marquee.4': 'تميز هادئ وراقٍ',
+    'marquee.5': 'حيث يلتقي الشكل بالوجود',
+    'marquee.6': 'شحن دولي سريع ومباشر',
+
+    // Trending Categories
+    'trending.new_in': 'وصل حديثاً',
+    'trending.coords': 'أطقم متناسقة',
+    'trending.modest': 'أزياء محتشمة',
+    'trending.workwear': 'أزياء العمل',
+    'trending.denim': 'دنيم فاخر',
+    'trending.neutrals': 'ألوان حيادية',
+    'trending.coats': 'معاطف وسترات',
+    'trending.cashmere': 'كشمير خالص',
 
     // Trending & Categories
     'section.trending_now': 'الأكثر طلباً الآن',
@@ -746,6 +800,7 @@ const products = [
     id: 'kayan-w-01',
     slug: 'sculpted-wool-cocoon-coat',
     name: 'Sculpted Wool Cocoon Coat',
+    nameAr: 'معطف صوف شرنقة منحوت',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'clothing',
@@ -768,9 +823,9 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1544441893-675973e31985?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1544441893-675973e31985?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 34,
@@ -786,6 +841,7 @@ const products = [
     id: 'kayan-w-02',
     slug: 'architectural-pleated-maxi-dress',
     name: 'Architectural Pleated Maxi Dress',
+    nameAr: 'فستان ماكسي بكسرات معمارية',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'clothing',
@@ -808,13 +864,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 119,
-    badges: "Online Exclusive",
+    badges: ["Online Exclusive"],
     tags: ['Atelier', 'women', 'clothing', 'Luxury'],
     material: 'Japanese Micro-Pleated Chiffon',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -826,6 +882,7 @@ const products = [
     id: 'kayan-w-03',
     slug: 'raw-cashmere-turtleneck-sweater',
     name: 'Raw Cashmere Turtleneck',
+    nameAr: 'كنزة كشمير خام بياقة عالية',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'clothing',
@@ -849,12 +906,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 109,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'women', 'clothing', 'Luxury'],
     material: '100% Grade-A Mongolian Cashmere',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -866,6 +923,7 @@ const products = [
     id: 'kayan-w-04',
     slug: 'double-faced-tailored-blazer',
     name: 'Double-Faced Tailored Blazer',
+    nameAr: 'بليزر صوف مفصل مزدوج الوجه',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'clothing',
@@ -887,14 +945,14 @@ const products = [
       { size: 'XL', stock: 16 }
     ],
     images: [
-      'https://images.unsplash.com/photo-1548624149-f9b1859aa9d0?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 33,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'women', 'clothing', 'Luxury'],
     material: '80% Wool, 20% Silk',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -906,6 +964,7 @@ const products = [
     id: 'kayan-w-05',
     slug: 'obsidian-silk-modest-kimono',
     name: 'Obsidian Silk Modest Kimono',
+    nameAr: 'كيمونو حريري محتشم بلون الأوبسيديان',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'trending',
@@ -928,9 +987,9 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 26,
@@ -946,6 +1005,7 @@ const products = [
     id: 'kayan-w-06',
     slug: 'wide-leg-pleated-trousers',
     name: 'Wide-Leg Pleated Trousers',
+    nameAr: 'بنطال عريض الساق بكسرات كلاسيكية',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'clothing',
@@ -969,12 +1029,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1548624149-f9b1859aa9d0?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 102,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'women', 'clothing', 'Luxury'],
     material: 'High-twist wool gabardine',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -986,6 +1046,7 @@ const products = [
     id: 'kayan-w-07',
     slug: 'atelier-leather-tote-bag',
     name: 'Atelier Sculptural Leather Tote',
+    nameAr: 'حقيبة يد جلدية نحتية من الأتيليه',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'accessories',
@@ -1008,13 +1069,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 28,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'women', 'accessories', 'Luxury'],
     material: 'Full-grain Italian calfskin',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1026,6 +1087,7 @@ const products = [
     id: 'kayan-w-08',
     slug: 'sculpted-heel-leather-mules',
     name: 'Sculpted Heel Leather Mules',
+    nameAr: 'حذاء بكعب نحتي من الجلد الطبيعي',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'accessories',
@@ -1048,13 +1110,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 5,
     reviewCount: 79,
-    badges: "Archive Special",
+    badges: ["Archive Special"],
     tags: ['Atelier', 'women', 'accessories', 'Luxury'],
     material: 'Supple nappa leather',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1066,6 +1128,7 @@ const products = [
     id: 'kayan-w-09',
     slug: 'oversized-poplin-shirt-dress',
     name: 'Oversized Poplin Shirt Dress',
+    nameAr: 'فستان قميص بوبلين بقصة فضفاضة',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'clothing',
@@ -1087,14 +1150,14 @@ const products = [
       { size: 'XL', stock: 6 }
     ],
     images: [
+      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 23,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'women', 'clothing', 'Luxury'],
     material: '100% GOTS Organic Crisp Cotton',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1106,6 +1169,7 @@ const products = [
     id: 'kayan-w-10',
     slug: 'raw-hem-selvedge-denim',
     name: 'Raw Hem Selvedge Denim',
+    nameAr: 'جينز سيلفدج بحواف خام طبيعية',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'trending',
@@ -1129,12 +1193,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1548624149-f9b1859aa9d0?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 108,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'women', 'trending', 'Luxury'],
     material: '13oz Japanese Raw Selvedge Cotton',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1146,6 +1210,7 @@ const products = [
     id: 'kayan-w-11',
     slug: 'silk-chiffon-evening-slip',
     name: 'Silk Chiffon Evening Slip',
+    nameAr: 'فستان سهرة انسيابي من شيفون الحرير',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'clothing',
@@ -1168,13 +1233,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 81,
-    badges: "Online Exclusive",
+    badges: ["Online Exclusive"],
     tags: ['Atelier', 'women', 'clothing', 'Luxury'],
     material: 'Heavyweight bias-cut silk',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1186,6 +1251,7 @@ const products = [
     id: 'kayan-w-12',
     slug: 'brutalist-brass-cuff',
     name: 'Brutalist Sculpted Brass Cuff',
+    nameAr: 'سوار نحاسي نحتي بأسلوب بروتالي',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'accessories',
@@ -1208,13 +1274,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 136,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'women', 'accessories', 'Luxury'],
     material: 'Hand-forged recycled brass with 18k gold dip',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1226,6 +1292,7 @@ const products = [
     id: 'kayan-w-13',
     slug: 'merino-knit-coord-top',
     name: 'Merino Ribbed Knit Coord Top',
+    nameAr: 'كنزة ميرينو مضلعة طقم متناسق',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'trending',
@@ -1249,12 +1316,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 138,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'women', 'trending', 'Luxury'],
     material: '100% Extra-fine Merino',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1266,6 +1333,7 @@ const products = [
     id: 'kayan-w-14',
     slug: 'merino-knit-coord-skirt',
     name: 'Merino Ribbed Coord Maxi Skirt',
+    nameAr: 'تنورة ماكسي مضلعة من صوف الميرينو',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'trending',
@@ -1287,14 +1355,14 @@ const products = [
       { size: 'XL', stock: 16 }
     ],
     images: [
-      'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 45,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'women', 'trending', 'Luxury'],
     material: '100% Extra-fine Merino',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1306,6 +1374,7 @@ const products = [
     id: 'kayan-w-15',
     slug: 'belted-technical-trench',
     name: 'Belted Technical Storm Trench',
+    nameAr: 'معطف ترنش تقني واقٍ بحزام',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'clothing',
@@ -1328,13 +1397,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1548624149-f9b1859aa9d0?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1544441893-675973e31985?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1544441893-675973e31985?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 31,
-    badges: "Limited",
+    badges: ["Limited"],
     tags: ['Atelier', 'women', 'clothing', 'Luxury'],
     material: 'Water-repellent bonded cotton-nylon',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1346,6 +1415,7 @@ const products = [
     id: 'kayan-w-16',
     slug: 'maternity-pleated-wrap-gown',
     name: 'Maternity Pleated Wrap Gown',
+    nameAr: 'ثوب حمل ملفوف بكسرات انسيابية',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'curations',
@@ -1369,12 +1439,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1516575334481-f85287c2c82d?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1516575334481-f85287c2c82d?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 34,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'women', 'curations', 'Luxury'],
     material: 'Breathable Tencel Lyocell',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1386,6 +1456,7 @@ const products = [
     id: 'kayan-w-17',
     slug: 'monochrome-silk-foulard',
     name: 'Monochrome Geometry Silk Foulard',
+    nameAr: 'وشاح حريري بنقوش هندسية مونوكروم',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'accessories',
@@ -1408,13 +1479,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 64,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'women', 'accessories', 'Luxury'],
     material: '100% Twill Silk 90x90cm',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1426,6 +1497,7 @@ const products = [
     id: 'kayan-w-18',
     slug: 'plus-form-sculpted-tunic',
     name: 'Plus Form Sculpted Tunic',
+    nameAr: 'تونيك نحتي للمقاسات المريحة',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'curations',
@@ -1449,12 +1521,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 58,
-    badges: "Online Exclusive",
+    badges: ["Online Exclusive"],
     tags: ['Atelier', 'women', 'curations', 'Luxury'],
     material: 'Dense matte crepe',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1466,6 +1538,7 @@ const products = [
     id: 'kayan-w-19',
     slug: 'titanium-frame-sunglasses',
     name: 'Titanium Geometric Sunglasses',
+    nameAr: 'نظارة شمسية هندسية من التيتانيوم',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'accessories',
@@ -1488,13 +1561,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 5,
     reviewCount: 32,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'women', 'accessories', 'Luxury'],
     material: 'Japanese aerospace titanium with Zeiss lenses',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1506,6 +1579,7 @@ const products = [
     id: 'kayan-w-20',
     slug: 'equinox-archive-cashmere-wrap',
     name: 'Equinox Archive Cashmere Wrap',
+    nameAr: 'شال كشمير من أرشيف إكوينوكس',
     brand: 'KAYAN Atelier',
     department: 'women',
     category: 'curations',
@@ -1529,8 +1603,8 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 136,
@@ -1546,6 +1620,7 @@ const products = [
     id: 'kayan-m-01',
     slug: 'boxy-boiled-wool-overshirt',
     name: 'Boxy Boiled Wool Overshirt',
+    nameAr: 'قميص صوف مغلي بقصة بوكسي عصرية',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'trending_men',
@@ -1568,9 +1643,9 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 5,
     reviewCount: 132,
@@ -1586,6 +1661,7 @@ const products = [
     id: 'kayan-m-02',
     slug: 'double-breasted-camel-overcoat',
     name: 'Double-Breasted Camel Overcoat',
+    nameAr: 'معطف جملي فاخر مزدوج الأزرار',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'trending_men',
@@ -1610,11 +1686,11 @@ const products = [
       'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1544441893-675973e31985?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 80,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'men', 'trending_men', 'Luxury'],
     material: '90% Camel Hair, 10% Cashmere',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1626,6 +1702,7 @@ const products = [
     id: 'kayan-m-03',
     slug: 'japanese-selvedge-relaxed-denim',
     name: 'Japanese Selvedge Relaxed Denim',
+    nameAr: 'جينز سيلفدج ياباني بقصة مريحة',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'trending_men',
@@ -1649,12 +1726,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 5,
     reviewCount: 62,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'men', 'trending_men', 'Luxury'],
     material: '14.5oz Okayama Selvedge Denim',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1666,6 +1743,7 @@ const products = [
     id: 'kayan-m-04',
     slug: 'heavyweight-loopback-hoodie',
     name: 'Heavyweight 500GSM Loopback Hoodie',
+    nameAr: 'هودي قطني ثقيل 500 غرام',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'clothing_men',
@@ -1688,13 +1766,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 52,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'men', 'clothing_men', 'Luxury'],
     material: '100% Organic Combed French Terry',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1706,6 +1784,7 @@ const products = [
     id: 'kayan-m-05',
     slug: 'chunky-rib-cardigan',
     name: 'Chunky Rib Wool Cardigan',
+    nameAr: 'كارديجان صوف محبوك بأضلاع سميكة',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'trending_men',
@@ -1728,13 +1807,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1614975059251-992f11792b9f?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1614975059251-992f11792b9f?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 69,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'men', 'trending_men', 'Luxury'],
     material: '100% British Wool',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1746,6 +1825,7 @@ const products = [
     id: 'kayan-m-06',
     slug: 'pleated-wide-leg-wool-trousers',
     name: 'Pleated Wide-Leg Wool Trousers',
+    nameAr: 'بنطال صوف عريض بكسرات متقنة',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'trending_men',
@@ -1768,13 +1848,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 22,
-    badges: "Online Exclusive",
+    badges: ["Online Exclusive"],
     tags: ['Atelier', 'men', 'trending_men', 'Luxury'],
     material: 'Italian Tropical Wool',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1786,6 +1866,7 @@ const products = [
     id: 'kayan-m-07',
     slug: 'minimalist-leather-chelsea-boots',
     name: 'Minimalist Leather Chelsea Boots',
+    nameAr: 'بوت تشيلسي جلدي تبسيطي فاخر',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'shoes_men',
@@ -1809,12 +1890,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 67,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'men', 'shoes_men', 'Luxury'],
     material: 'Vegetable-tanned calf leather',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1826,6 +1907,7 @@ const products = [
     id: 'kayan-m-08',
     slug: 'sculpted-derby-shoes',
     name: 'Commando Sole Derby Shoes',
+    nameAr: 'حذاء ديربي بنعل كوماندو متين',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'shoes_men',
@@ -1849,12 +1931,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 20,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'men', 'shoes_men', 'Luxury'],
     material: 'Polished full-grain boxcalf',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1866,6 +1948,7 @@ const products = [
     id: 'kayan-m-09',
     slug: 'pebble-grain-leather-briefcase',
     name: 'Pebble Grain Document Case',
+    nameAr: 'حقيبة مستندات جلدية بنقشة الحبيبات',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'shoes_men',
@@ -1888,13 +1971,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 24,
-    badges: "Online Exclusive",
+    badges: ["Online Exclusive"],
     tags: ['Atelier', 'men', 'shoes_men', 'Luxury'],
     material: 'Durable Italian pebble grain leather',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1906,6 +1989,7 @@ const products = [
     id: 'kayan-m-10',
     slug: 'pima-cotton-heavy-tee',
     name: 'Mercerized Pima Cotton Tee',
+    nameAr: 'تيشيرت قطن بيما حريري معالج',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'clothing_men',
@@ -1928,13 +2012,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 116,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'men', 'clothing_men', 'Luxury'],
     material: '100% Peruvian Long-Staple Pima',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1946,6 +2030,7 @@ const products = [
     id: 'kayan-m-11',
     slug: 'technical-minimalist-mac-coat',
     name: 'Technical Minimalist Mac Coat',
+    nameAr: 'معطف ماك تقني بأسلوب تبسيطي',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'clothing_men',
@@ -1969,12 +2054,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1544441893-675973e31985?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1544441893-675973e31985?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 65,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'men', 'clothing_men', 'Luxury'],
     material: '3-Layer waterproof membrane cotton',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -1986,6 +2071,7 @@ const products = [
     id: 'kayan-m-12',
     slug: 'unstructured-linen-blazer',
     name: 'Unstructured Washed Linen Blazer',
+    nameAr: 'بليزر كتان مغسول بتصميم ناعم',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'clothing_men',
@@ -2008,13 +2094,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 131,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'men', 'clothing_men', 'Luxury'],
     material: '100% Normandy Linen',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2026,6 +2112,7 @@ const products = [
     id: 'kayan-m-13',
     slug: 'merino-mockneck-sweater',
     name: 'Fine Merino Mockneck Knit',
+    nameAr: 'كنزة ميرينو بياقة متوسطة الارتفاع',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'trending_men',
@@ -2048,13 +2135,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1614975059251-992f11792b9f?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1614975059251-992f11792b9f?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 49,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'men', 'trending_men', 'Luxury'],
     material: '100% Zegna Baruffa Merino',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2066,6 +2153,7 @@ const products = [
     id: 'kayan-m-14',
     slug: 'tailored-drawstring-trousers',
     name: 'Tailored Wool Drawstring Trousers',
+    nameAr: 'بنطال صوف برباط خصر مفصل',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'trending_men',
@@ -2089,12 +2177,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 77,
-    badges: "Online Exclusive",
+    badges: ["Online Exclusive"],
     tags: ['Atelier', 'men', 'trending_men', 'Luxury'],
     material: 'Stretch wool-cashmere blend',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2106,6 +2194,7 @@ const products = [
     id: 'kayan-m-15',
     slug: 'leather-aviator-jacket',
     name: 'Raw Leather Aviator Jacket',
+    nameAr: 'جاكيت طيارين من الجلد الطبيعي الخام',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'clothing_men',
@@ -2127,14 +2216,14 @@ const products = [
       { size: 'XXL', stock: 18 }
     ],
     images: [
-      'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1544441893-675973e31985?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 26,
-    badges: "Limited",
+    badges: ["Limited"],
     tags: ['Atelier', 'men', 'clothing_men', 'Luxury'],
     material: 'Full-grain lambskin with shearling collar',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2146,6 +2235,7 @@ const products = [
     id: 'kayan-m-16',
     slug: 'oxford-cloth-button-down',
     name: 'Heavyweight Oxford Shirt',
+    nameAr: 'قميص أكسفورد قطني فاخر ثقيل',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'clothing_men',
@@ -2168,13 +2258,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 26,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'men', 'clothing_men', 'Luxury'],
     material: '100% Supima Cotton Oxford',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2186,6 +2276,7 @@ const products = [
     id: 'kayan-m-17',
     slug: 'equinox-archive-wool-cape',
     name: 'Equinox Archive Hooded Wool Cape',
+    nameAr: 'كاب صوف بغطاء رأس من الأرشيف',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'clothing_men',
@@ -2210,11 +2301,11 @@ const products = [
       'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1544441893-675973e31985?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 70,
-    badges: "Archive Special",
+    badges: ["Archive Special"],
     tags: ['Atelier', 'men', 'clothing_men', 'Luxury'],
     material: 'Double-face felted wool',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2226,6 +2317,7 @@ const products = [
     id: 'kayan-m-18',
     slug: 'italian-leather-belt',
     name: 'Architectural Buckle Leather Belt',
+    nameAr: 'حزام جلدي بإبزيم هندسي معماري',
     brand: 'KAYAN Homme',
     department: 'men',
     category: 'shoes_men',
@@ -2248,13 +2340,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 51,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'men', 'shoes_men', 'Luxury'],
     material: 'English bridle leather, matte brass',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2266,6 +2358,7 @@ const products = [
     id: 'kayan-k-01',
     slug: 'organic-cotton-baby-romper',
     name: 'Organic Cotton Ribbed Romper',
+    nameAr: 'أفرول أطفال مضلع من القطن العضوي',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_ages',
@@ -2288,9 +2381,9 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 5,
     reviewCount: 143,
@@ -2306,6 +2399,7 @@ const products = [
     id: 'kayan-k-02',
     slug: 'merino-knit-cardigan-girls',
     name: 'Miniature Merino Cardigan',
+    nameAr: 'كارديجان أطفال صغير من صوف الميرينو',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_categories',
@@ -2327,14 +2421,14 @@ const products = [
       { size: '10Y', stock: 26 }
     ],
     images: [
-      'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 47,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'kids', 'kids_categories', 'Luxury'],
     material: '100% Non-itch Merino Wool',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2346,6 +2440,7 @@ const products = [
     id: 'kayan-k-03',
     slug: 'corduroy-dungarees-toddler',
     name: 'Washed Corduroy Dungarees',
+    nameAr: 'سلوبيت أطفال مخمل كوردوروي مغسول',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_ages',
@@ -2368,13 +2463,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 22,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'kids', 'kids_ages', 'Luxury'],
     material: 'Soft cotton corduroy',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2386,6 +2481,7 @@ const products = [
     id: 'kayan-k-04',
     slug: 'quilted-down-hooded-puffer',
     name: 'Quilted Down Lightweight Puffer',
+    nameAr: 'سترة أطفال مبطنة بالريش خفيفة',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_categories',
@@ -2408,13 +2504,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 138,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'kids', 'kids_categories', 'Luxury'],
     material: 'Recycled ripstop nylon, ethical down fill',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2426,6 +2522,7 @@ const products = [
     id: 'kayan-k-05',
     slug: 'pleated-ceremony-dress',
     name: 'Tiered Linen Ceremony Dress',
+    nameAr: 'فستان مناسبات كتان بطبقات أنيقة',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_categories',
@@ -2448,13 +2545,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 118,
-    badges: "Online Exclusive",
+    badges: ["Online Exclusive"],
     tags: ['Atelier', 'kids', 'kids_categories', 'Luxury'],
     material: '100% French Washed Linen',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2466,6 +2563,7 @@ const products = [
     id: 'kayan-k-06',
     slug: 'boys-tailored-linen-suit',
     name: 'Junior Tailored Linen Suit',
+    nameAr: 'بدلة كتان مفصلة للأطفال',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_categories',
@@ -2487,14 +2585,14 @@ const products = [
       { size: '10Y', stock: 15 }
     ],
     images: [
+      'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 68,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'kids', 'kids_categories', 'Luxury'],
     material: 'Pure breathable linen blend',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2506,6 +2604,7 @@ const products = [
     id: 'kayan-k-07',
     slug: 'classic-leather-pre-walkers',
     name: 'Soft Sole Leather Pre-Walkers',
+    nameAr: 'حذاء مشي أول جلدي بنعل ناعم',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_categories',
@@ -2528,13 +2627,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 29,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'kids', 'kids_categories', 'Luxury'],
     material: 'Chrome-free vegetable leather',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2546,6 +2645,7 @@ const products = [
     id: 'kayan-k-08',
     slug: 'junior-chelsea-boots',
     name: 'Junior Suede Chelsea Boots',
+    nameAr: 'بوت تشيلسي شامواه للأطفال',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_categories',
@@ -2568,13 +2668,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 133,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'kids', 'kids_categories', 'Luxury'],
     material: 'Waterproof split suede with rubber grip',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2586,6 +2686,7 @@ const products = [
     id: 'kayan-k-09',
     slug: 'teen-oversized-heavy-hoodie',
     name: 'Teen Architectural Loopback Hoodie',
+    nameAr: 'هودي شبابي بقصة معمارية مريحة',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_ages',
@@ -2608,13 +2709,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 72,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'kids', 'kids_ages', 'Luxury'],
     material: '450GSM organic brushed cotton',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2626,6 +2727,7 @@ const products = [
     id: 'kayan-k-10',
     slug: 'teen-pleated-trousers',
     name: 'Teen Fluid Tailored Trousers',
+    nameAr: 'بنطال شبابي مفصل بقماش انسيابي',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_ages',
@@ -2649,12 +2751,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 140,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'kids', 'kids_ages', 'Luxury'],
     material: 'Stretch wool blend',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2666,6 +2768,7 @@ const products = [
     id: 'kayan-k-11',
     slug: 'baby-cashmere-knit-blanket',
     name: 'Heritage Baby Cashmere Blanket',
+    nameAr: 'بطانية أطفال فاخرة من كشمير هيريتدج',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_ages',
@@ -2689,12 +2792,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 115,
-    badges: "Online Exclusive",
+    badges: ["Online Exclusive"],
     tags: ['Atelier', 'kids', 'kids_ages', 'Luxury'],
     material: '100% Grade-A Mongolian Cashmere',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2706,6 +2809,7 @@ const products = [
     id: 'kayan-k-12',
     slug: 'summer-linen-smock-set',
     name: 'Summer Linen Smock & Shorts Set',
+    nameAr: 'طقم صيفي سموك وشورت كتان',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_ages',
@@ -2729,12 +2833,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 95,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'kids', 'kids_ages', 'Luxury'],
     material: '100% Washed Linen',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2746,6 +2850,7 @@ const products = [
     id: 'kayan-k-13',
     slug: 'waterproof-school-anorak',
     name: 'Reflective School Anorak',
+    nameAr: 'سترة مدرسية واقية عاكسة للضوء',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_ages',
@@ -2769,12 +2874,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 133,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'kids', 'kids_ages', 'Luxury'],
     material: 'Waterproof shell with breathable mesh lining',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2786,6 +2891,7 @@ const products = [
     id: 'kayan-k-14',
     slug: 'kids-canvas-sneakers',
     name: 'Low-Top Organic Canvas Sneakers',
+    nameAr: 'سنيكرز قماشي من القطن العضوي',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_categories',
@@ -2808,13 +2914,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 58,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'kids', 'kids_categories', 'Luxury'],
     material: 'Organic canvas, natural vulcanized rubber',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2826,6 +2932,7 @@ const products = [
     id: 'kayan-k-15',
     slug: 'equinox-kids-merino-beanie',
     name: 'Equinox Ribbed Merino Beanie',
+    nameAr: 'قبعة بيني مضلعة من صوف الميرينو',
     brand: 'KAYAN Enfant',
     department: 'kids',
     category: 'kids_categories',
@@ -2847,14 +2954,14 @@ const products = [
       { size: '10Y', stock: 21 }
     ],
     images: [
-      'https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 18,
-    badges: "Archive Special",
+    badges: ["Archive Special"],
     tags: ['Atelier', 'kids', 'kids_categories', 'Luxury'],
     material: '100% Merino Wool',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2866,6 +2973,7 @@ const products = [
     id: 'kayan-b-01',
     slug: 'damascus-rose-cellular-mist',
     name: 'Damascus Rose Cellular Mist',
+    nameAr: 'رذاذ الورد الدمشقي الخلوي المنعش',
     brand: 'KAYAN Alchimie',
     department: 'beauty',
     category: 'beauty_categories',
@@ -2886,8 +2994,8 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1608248597359-bb58356770f9?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 33,
@@ -2903,6 +3011,7 @@ const products = [
     id: 'kayan-b-02',
     slug: 'obsidian-oud-extrait-de-parfum',
     name: 'Obsidian Oud Extrait de Parfum',
+    nameAr: 'عطر أوبسيديان عود - إكستري دو بارفان',
     brand: 'KAYAN Alchimie',
     department: 'beauty',
     category: 'beauty_categories',
@@ -2923,8 +3032,8 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 126,
@@ -2940,6 +3049,7 @@ const products = [
     id: 'kayan-b-03',
     slug: 'velvet-matte-lip-elixir',
     name: 'Velvet Matte Lip Elixir - Terracotta',
+    nameAr: 'إكسير شفاه مخملي مطفأ - تيراكوتا',
     brand: 'Nour Labs Paris',
     department: 'beauty',
     category: 'beauty_categories',
@@ -2959,13 +3069,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 77,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: 'Camellia oil, pomegranate sterols, mineral pigments',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -2977,6 +3087,7 @@ const products = [
     id: 'kayan-b-04',
     slug: 'facial-sculpting-obsidian-guasha',
     name: 'Bian Stone Sculpting Gua Sha',
+    nameAr: 'أداة غوا شا لنحت الوجه بحجر بيان',
     brand: 'KAYAN Alchimie',
     department: 'beauty',
     category: 'beauty_categories',
@@ -2995,14 +3106,14 @@ const products = [
       { size: 'Full Size', stock: 20 }
     ],
     images: [
-      'https://images.unsplash.com/photo-1608248597359-bb58356770f9?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 44,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: '100% Natural Thermal Bian Stone',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3014,6 +3125,7 @@ const products = [
     id: 'kayan-b-05',
     slug: 'botanical-squalane-recovery-oil',
     name: 'Botanical Squalane Recovery Oil',
+    nameAr: 'زيت التعافي بالسكوالين النباتي النقي',
     brand: 'Nour Labs Paris',
     department: 'beauty',
     category: 'beauty_categories',
@@ -3032,14 +3144,14 @@ const products = [
       { size: 'Full Size', stock: 10 }
     ],
     images: [
-      'https://images.unsplash.com/photo-1608248597359-bb58356770f9?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 101,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: '100% Olive-derived squalane, bakuchiol, blue tansy',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3051,6 +3163,7 @@ const products = [
     id: 'kayan-b-06',
     slug: 'santal-silt-parfum',
     name: 'Santal & Silt Extrait de Parfum',
+    nameAr: 'عطر صندل وسيلت - إكستري دو بارفان',
     brand: 'Santal & Silt',
     department: 'beauty',
     category: 'beauty_brands',
@@ -3071,12 +3184,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 5,
     reviewCount: 69,
-    badges: "Online Exclusive",
+    badges: ["Online Exclusive"],
     tags: ['Atelier', 'beauty', 'beauty_brands', 'Luxury'],
     material: 'Australian sandalwood, sea salt, dry cedar, cardamom',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3088,6 +3201,7 @@ const products = [
     id: 'kayan-b-07',
     slug: 'peptide-contour-eye-balm',
     name: 'Peptide Contour Eye Balm',
+    nameAr: 'بلسم الببتيدات لشد محيط العينين',
     brand: 'Nour Labs Paris',
     department: 'beauty',
     category: 'beauty_categories',
@@ -3107,13 +3221,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1608248597359-bb58356770f9?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 143,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: 'Tri-peptide complex, green tea caffeine, shea',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3125,6 +3239,7 @@ const products = [
     id: 'kayan-b-08',
     slug: 'nour-lip-oil-glaze',
     name: 'Honey Infused Lip Plumping Glaze',
+    nameAr: 'ملمع شفاه ممتلئ بخلاصة العسل النقي',
     brand: 'Nour Labs Paris',
     department: 'beauty',
     category: 'beauty_categories',
@@ -3144,13 +3259,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 52,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: 'Wild mountain honey, jojoba seed, vitamin E',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3162,6 +3277,7 @@ const products = [
     id: 'kayan-b-09',
     slug: 'mineral-veil-sun-shield-spf50',
     name: 'Mineral Veil Invisible Sun Shield SPF 50',
+    nameAr: 'واقي شمس معدني شفاف SPF 50',
     brand: 'KAYAN Alchimie',
     department: 'beauty',
     category: 'beauty_categories',
@@ -3181,13 +3297,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1608248597359-bb58356770f9?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 38,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: 'Non-nano zinc oxide, niacinamide, ectoin',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3199,6 +3315,7 @@ const products = [
     id: 'kayan-b-10',
     slug: 'amber-resins-incense-cones',
     name: 'Hand-Pressed Amber Resin Cones',
+    nameAr: 'مخاريط بخور صمغ العنبر المعصور يدوياً',
     brand: 'Santal & Silt',
     department: 'beauty',
     category: 'beauty_categories',
@@ -3217,14 +3334,14 @@ const products = [
       { size: 'Full Size', stock: 26 }
     ],
     images: [
+      'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 42,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: 'Yemeni frankincense, labdanum, cedar sawdust',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3236,6 +3353,7 @@ const products = [
     id: 'kayan-b-11',
     slug: 'silk-peptide-body-creme',
     name: 'Silk Peptide Rich Body Creme',
+    nameAr: 'كريم جسم غني ببروتينات الحرير',
     brand: 'KAYAN Alchimie',
     department: 'beauty',
     category: 'beauty_categories',
@@ -3256,12 +3374,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1608248597359-bb58356770f9?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 106,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: 'Hydrolyzed silk, cupuacu butter, sweet almond',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3273,6 +3391,7 @@ const products = [
     id: 'kayan-b-12',
     slug: 'cashmere-hand-salve',
     name: 'Cashmere & Cedarwood Hand Salve',
+    nameAr: 'مرهم اليدين بالكشمير وخشب الأرز',
     brand: 'KAYAN Alchimie',
     department: 'beauty',
     category: 'beauty_categories',
@@ -3291,14 +3410,14 @@ const products = [
       { size: 'Full Size', stock: 7 }
     ],
     images: [
-      'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1608248597359-bb58356770f9?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 81,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: 'Castor wax, lanolin alternative, cedar essential oil',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3310,6 +3429,7 @@ const products = [
     id: 'kayan-b-13',
     slug: 'noir-curling-mineral-mascara',
     name: 'Noir Curling Clean Mineral Mascara',
+    nameAr: 'ماسكارا معدنية نقية لرموش مموجة',
     brand: 'Nour Labs Paris',
     department: 'beauty',
     category: 'beauty_categories',
@@ -3329,13 +3449,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 136,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: 'Carnauba wax, charcoal pigment, argan oil',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3347,6 +3467,7 @@ const products = [
     id: 'kayan-b-14',
     slug: 'vetiver-solstice-cologne',
     name: 'Vetiver Solstice Botanical Cologne',
+    nameAr: 'كولونيا نباتية بنجيل الهند والانقلاب الشمسي',
     brand: 'Santal & Silt',
     department: 'beauty',
     category: 'beauty_categories',
@@ -3367,12 +3488,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 96,
-    badges: "Online Exclusive",
+    badges: ["Online Exclusive"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: 'Haitian vetiver, green bergamot, damp moss',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3384,6 +3505,7 @@ const products = [
     id: 'kayan-b-15',
     slug: 'equinox-archive-travel-vials',
     name: 'Archive Discovery Fragrance Set (5x10ml)',
+    nameAr: 'مجموعة استكشاف العطور الأرشيفية (5×10 مل)',
     brand: 'KAYAN Alchimie',
     department: 'beauty',
     category: 'beauty_categories',
@@ -3402,14 +3524,14 @@ const products = [
       { size: 'Full Size', stock: 11 }
     ],
     images: [
+      'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 135,
-    badges: "Archive Special",
+    badges: ["Archive Special"],
     tags: ['Atelier', 'beauty', 'beauty_categories', 'Luxury'],
     material: 'Set of 5 signature extraits in metal travel cases',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3421,6 +3543,7 @@ const products = [
     id: 'kayan-h-01',
     slug: 'fluted-travertine-stone-vessel',
     name: 'Fluted Travertine Sculptural Vessel',
+    nameAr: 'مزهرية نحتية مضلعة من حجر الترافرتين',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3441,9 +3564,9 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 5,
     reviewCount: 32,
@@ -3459,6 +3582,7 @@ const products = [
     id: 'kayan-h-02',
     slug: 'belgian-washed-linen-duvet-set',
     name: 'Belgian Washed Linen Duvet Set',
+    nameAr: 'طقم غطاء لحاف من الكتان البلجيكي المغسول',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3480,8 +3604,8 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 70,
@@ -3497,6 +3621,7 @@ const products = [
     id: 'kayan-h-03',
     slug: 'brutalist-architectural-wax-candle',
     name: 'Brutalist Architectural Pillar Candle',
+    nameAr: 'شمعة عمودية بتصميم معماري بروتالي',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3517,13 +3642,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 21,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: 'Natural rapeseed & coconut wax, cotton wick',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3535,6 +3660,7 @@ const products = [
     id: 'kayan-h-04',
     slug: 'smoked-glass-carafe-and-tumblers',
     name: 'Mouth-Blown Smoked Glass Carafe Set',
+    nameAr: 'طقم دورق زجاجي مدخن منفوخ يدوياً',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3555,13 +3681,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 5,
     reviewCount: 68,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: 'Borosilicate thermal smoked glass',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3573,6 +3699,7 @@ const products = [
     id: 'kayan-h-05',
     slug: 'handwoven-boucle-wool-throw',
     name: 'Handwoven Boucle Wool Blanket',
+    nameAr: 'بطانية صوف بوكليه منسوجة يدوياً',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3593,13 +3720,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 5,
     reviewCount: 46,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: '85% Highland Wool, 15% Alpaca',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3611,6 +3738,7 @@ const products = [
     id: 'kayan-h-06',
     slug: 'raw-cast-bronze-bookends',
     name: 'Cast Bronze Monolith Bookends (Pair)',
+    nameAr: 'زوج مساند كتب مونوليث من البرونز المسبوك',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3632,12 +3760,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.7,
     reviewCount: 112,
-    badges: "Limited",
+    badges: ["Limited"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: 'Solid sand-cast bronze with living patina',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3649,6 +3777,7 @@ const products = [
     id: 'kayan-h-07',
     slug: 'stoneware-ribbed-pitcher',
     name: 'Hand-Thrown Stoneware Ribbed Pitcher',
+    nameAr: 'إبريق فخار حجري مضلع مصنوع يدوياً',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3670,12 +3799,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 94,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: 'High-fire stoneware with matte chalk glaze',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3687,6 +3816,7 @@ const products = [
     id: 'kayan-h-08',
     slug: 'sculpted-alabaster-tea-light-holder',
     name: 'Sculpted Alabaster Luminary',
+    nameAr: 'حامل شموع نحتي من حجر الألباستر',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3707,13 +3837,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 5,
     reviewCount: 78,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: 'Translucent Spanish white alabaster',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3725,6 +3855,7 @@ const products = [
     id: 'kayan-h-09',
     slug: 'wabi-sabi-linen-tablecloth',
     name: 'Wabi-Sabi Washed Linen Table Runner',
+    nameAr: 'مفرش طاولة كتان بأسلوب وابي-سابي',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3744,14 +3875,14 @@ const products = [
       { size: 'Atelier', stock: 17 }
     ],
     images: [
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 25,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: 'Heavyweight raw flax linen with mitred corners',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3763,6 +3894,7 @@ const products = [
     id: 'kayan-h-10',
     slug: 'walnut-sculptural-tray',
     name: 'Honed Walnut Sculptural Valet Tray',
+    nameAr: 'صينية تنظيم نحتية من خشب الجوز المصقول',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3783,13 +3915,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 40,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: 'FSC-certified solid American Black Walnut',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3801,6 +3933,7 @@ const products = [
     id: 'kayan-h-11',
     slug: 'ceramic-diffuser-incense-dish',
     name: 'Matte Black Basalt Incense Dish',
+    nameAr: 'صحن بخور من صخر البازلت الأسود المطفأ',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3821,13 +3954,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 144,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: 'Unglazed volcanic basalt clay',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3839,6 +3972,7 @@ const products = [
     id: 'kayan-h-12',
     slug: 'plush-waffle-bath-sheet',
     name: 'Organic Turkish Cotton Waffle Bath Sheet',
+    nameAr: 'منشفة حمام وافل كبيرة من القطن التركي',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3860,12 +3994,12 @@ const products = [
     images: [
       'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 35,
-    badges: "Eco",
+    badges: ["Eco"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: '650GSM Long-staple Aegean organic cotton',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3877,6 +4011,7 @@ const products = [
     id: 'kayan-h-13',
     slug: 'brutalist-concrete-planter',
     name: 'Brutalist Fluted Concrete Planter',
+    nameAr: 'أصيص خرساني مضلع بأسلوب بروتالي',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3897,13 +4032,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 33,
-    badges: "New",
+    badges: ["New"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: 'Reinforced architectural concrete',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3915,6 +4050,7 @@ const products = [
     id: 'kayan-h-14',
     slug: 'blown-glass-oil-lamp',
     name: 'Hand-Blown Minimalist Oil Lamp',
+    nameAr: 'مصباح زيت تبسيطي من الزجاج المنفوخ',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3935,13 +4071,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80'
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.9,
     reviewCount: 76,
-    badges: "Best Seller",
+    badges: ["Best Seller"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: 'Thermal borosilicate glass, fiberglass everlasting wick',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -3953,6 +4089,7 @@ const products = [
     id: 'kayan-h-15',
     slug: 'equinox-archive-cashmere-cushion',
     name: 'Archive Cashmere & Suede Cushion',
+    nameAr: 'وسادة فاخرة من الكشمير والجلد السويدي',
     brand: 'KAYAN Maison',
     department: 'home',
     category: 'home_curation',
@@ -3973,13 +4110,13 @@ const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&auto=format&fit=crop&q=80'
     ],
     rating: 4.8,
     reviewCount: 141,
-    badges: "Archive Special",
+    badges: ["Archive Special"],
     tags: ['Atelier', 'home', 'home_curation', 'Luxury'],
     material: 'Double-sided cashmere face with French calf suede back',
     care: 'Dry clean only or gentle hand sponge. Store in breathable garment cover.',
@@ -5952,62 +6089,106 @@ function initNewsletterForms() {
 
 
 const arabicNameMap = {
+  // WOMEN (20)
   'Sculpted Wool Cocoon Coat': 'معطف صوف شرنقة منحوت',
   'Architectural Pleated Maxi Dress': 'فستان ماكسي بكسرات معمارية',
-  'Structured Double-Breasted Blazer': 'بليزر كلاسيكي مزدوج الأزرار',
-  'Raw Silk Drape Column Gown': 'ثوب عمودي من الحرير الخام الانسيابي',
-  'Oversized Cashmere Turtleneck': 'كنزة كشمير أوفرسايز بياقة عالية',
-  'Pleated High-Waist Wide Trousers': 'بنطال عريض بخصر مرتفع وكسرات',
-  'Belted Technical Storm Trench': 'معطف ترنش تقني مقاوم للعواصف بحزام',
-  'Brutalist Tailored Jumpsuit': 'جمبسوت معماري مفصل',
-  'Asymmetric Draped Silk Blouse': 'بلوزة حرير انسيابية بقصة غير متماثلة',
-  'Minimalist Leather Trench Coat': 'معطف ترنش جلدي بأسلوب تبسيطي',
-  'Fine Merino Wool Wrap Cardigan': 'كارديجان ملفوف من صوف الميرينو الناعم',
-  'Voluminous Poplin Shirt Dress': 'فستان قميص بوبلين فضفاض',
-  'Heavyweight Wool Overcoat': 'معطف صوف شتوي ثقيل',
-  'Boxy Raw Denim Overshirt': 'قميص جينز خام بقصة مربعة',
-  'Pleated Tailored Wool Trousers': 'بنطال صوف مفصل بكسرات كلاسيكية',
-  'Minimalist Lambskin Leather Jacket': 'جاكيت جلد حمل طبيعي فاخر',
-  'Structured Wool Safari Jacket': 'جاكيت سفاري صوف بتصميم متماسك',
-  'Oversized Waffle Knit Crewneck': 'كنزة وافل محبوكة بقصة فضفاضة',
-  'Double-Breasted Wool Peacoat': 'معطف صوف بحري مزدوج الأزرار',
-  'Architectural Stand Collar Shirt': 'قميص بياقة قائمة معمارية',
-  'Heavy Selvedge Indigo Denim': 'بنطال جينز سيلفدج نيلي ثقيل',
-  'Brutalist Wool Harrington Jacket': 'جاكيت هارينغتون صوف معماري',
-  'Relaxed Cashmere Blend Hoodie': 'هودي ناعم من مزيج الكشمير المريح',
-  'Italian Wool Smoking Tuxedo Suit': 'بدلة توكسيدو سموكينغ من الصوف الإيطالي',
-  'Kids Virgin Wool Toggle Coat': 'معطف أطفال بأزرار خشبية من الصوف البكر',
-  'Kids Merino Knit Cardigan': 'كارديجان أطفال محبوك من صوف الميرينو',
-  'Kids Organic Cotton Chore Jacket': 'جاكيت أطفال يومي من القطن العضوي',
-  'Kids Pleated Linen Party Dress': 'فستان أطفال كتان بكسرات أنيقة',
-  'Kids Ribbed Cashmere Sweater': 'كنزة أطفال مضلعة من الكشمير الفاخر',
-  'Kids Selvedge Denim Dungarees': 'أوفرول أطفال جينز سيلفدج متين',
-  'Kids Flannel Check Overshirt': 'قميص أطفال فلانيل بنقشة المربعات',
-  'Kids Quilted Down Puffer Jacket': 'جاكيت أطفال مبطن بالريش الطبيعي',
-  'Kids Organic Jersey Lounge Set': 'طقم بيجاما أطفال مريح من الجيرسيه العضوي',
-  'Kids Hooded Parka Coat': 'باركا أطفال شتوية بغطاء رأس واقٍ',
-  'Kayan Oud Sublime Extrait': 'عطر كَيَان عود سوبليم - إكستري دو بارفان',
-  'Damask Rose & Ambergris Elixir': 'إكسير الورد الدمشقي والعنبر النادر',
-  'Cellular Sculpting Face Nectar': 'رحيق نحت وتجديد خلايا الوجه المركز',
-  'Smoked Vetiver & Atlas Cedar Extract': 'مستخلص نجيل الهند المدخن وأرز الأطلس',
-  'Botanical Night Recovery Balm': 'بلسم التعافي الليلي النباتي الفائق',
-  'Pure Frankincense & Myrrh Incense': 'بخور اللبان الحوجري النقي والمر العماني',
-  'Ceramic Volcanic Stone Diffuser': 'فواحة أحجار بركانية سيراميكية فاخرة',
-  'Silk Infused Nourishing Body Oil': 'زيت جسم مغذٍ ببروتينات الحرير النقي',
-  'Hand-Carved Travertine Sculptural Vase': 'مزهرية نحتية من حجر الترافرتين المنحوت يدوياً',
-  'Brutalist Black Basalt Bowl': 'وعاء بازلت أسود بتصميم معماري',
-  'Mongolian Raw Cashmere Throw': 'غطاء كشمير منغولي خام منسوج يدوياً',
-  'Minimalist Cast Bronze Candelabra': 'شمعدان برونزي مصبوب بأسلوب تبسيطي',
-  'Heavy Belgian Linen Bedcover': 'مفرش سرير من الكتان البلجيكي الفاخر',
-  'Sculptural Marble Bookends': 'مساند كتب نحتية من الرخام الطبيعي',
-  'Hand-Poured Soy Amber Glass Candle': 'شمعة صويا معطرة بوعاء زجاجي عنبري',
-  'Smoked Oak Geometric Tray': 'صينية هندسية من خشب البلوط المدخن'
+  'Raw Cashmere Turtleneck': 'كنزة كشمير خام بياقة عالية',
+  'Double-Faced Tailored Blazer': 'بليزر صوف مفصل مزدوج الوجه',
+  'Obsidian Silk Modest Kimono': 'كيمونو حريري محتشم بلون الأوبسيديان',
+  'Wide-Leg Pleated Trousers': 'بنطال عريض الساق بكسرات كلاسيكية',
+  'Atelier Sculptural Leather Tote': 'حقيبة يد جلدية نحتية من الأتيليه',
+  'Sculpted Heel Leather Mules': 'حذاء بكعب نحتي من الجلد الطبيعي',
+  'Oversized Poplin Shirt Dress': 'فستان قميص بوبلين بقصة فضفاضة',
+  'Raw Hem Selvedge Denim': 'جينز سيلفدج بحواف خام طبيعية',
+  'Silk Chiffon Evening Slip': 'فستان سهرة انسيابي من شيفون الحرير',
+  'Brutalist Sculpted Brass Cuff': 'سوار نحاسي نحتي بأسلوب بروتالي',
+  'Merino Ribbed Knit Coord Top': 'كنزة ميرينو مضلعة طقم متناسق',
+  'Merino Ribbed Coord Maxi Skirt': 'تنورة ماكسي مضلعة من صوف الميرينو',
+  'Belted Technical Storm Trench': 'معطف ترنش تقني واقٍ بحزام',
+  'Maternity Pleated Wrap Gown': 'ثوب حمل ملفوف بكسرات انسيابية',
+  'Monochrome Geometry Silk Foulard': 'وشاح حريري بنقوش هندسية مونوكروم',
+  'Plus Form Sculpted Tunic': 'تونيك نحتي للمقاسات المريحة',
+  'Titanium Geometric Sunglasses': 'نظارة شمسية هندسية من التيتانيوم',
+  'Equinox Archive Cashmere Wrap': 'شال كشمير من أرشيف إكوينوكس',
+
+  // MEN (18)
+  'Boxy Boiled Wool Overshirt': 'قميص صوف مغلي بقصة بوكسي عصرية',
+  'Double-Breasted Camel Overcoat': 'معطف جملي فاخر مزدوج الأزرار',
+  'Japanese Selvedge Relaxed Denim': 'جينز سيلفدج ياباني بقصة مريحة',
+  'Heavyweight 500GSM Loopback Hoodie': 'هودي قطني ثقيل 500 غرام',
+  'Chunky Rib Wool Cardigan': 'كارديجان صوف محبوك بأضلاع سميكة',
+  'Pleated Wide-Leg Wool Trousers': 'بنطال صوف عريض بكسرات متقنة',
+  'Minimalist Leather Chelsea Boots': 'بوت تشيلسي جلدي تبسيطي فاخر',
+  'Commando Sole Derby Shoes': 'حذاء ديربي بنعل كوماندو متين',
+  'Pebble Grain Document Case': 'حقيبة مستندات جلدية بنقشة الحبيبات',
+  'Mercerized Pima Cotton Tee': 'تيشيرت قطن بيما حريري معالج',
+  'Technical Minimalist Mac Coat': 'معطف ماك تقني بأسلوب تبسيطي',
+  'Unstructured Washed Linen Blazer': 'بليزر كتان مغسول بتصميم ناعم',
+  'Fine Merino Mockneck Knit': 'كنزة ميرينو بياقة متوسطة الارتفاع',
+  'Tailored Wool Drawstring Trousers': 'بنطال صوف برباط خصر مفصل',
+  'Raw Leather Aviator Jacket': 'جاكيت طيارين من الجلد الطبيعي الخام',
+  'Heavyweight Oxford Shirt': 'قميص أكسفورد قطني فاخر ثقيل',
+  'Equinox Archive Hooded Wool Cape': 'كاب صوف بغطاء رأس من الأرشيف',
+  'Architectural Buckle Leather Belt': 'حزام جلدي بإبزيم هندسي معماري',
+
+  // KIDS (15)
+  'Organic Cotton Ribbed Romper': 'أفرول أطفال مضلع من القطن العضوي',
+  'Miniature Merino Cardigan': 'كارديجان أطفال صغير من صوف الميرينو',
+  'Washed Corduroy Dungarees': 'سلوبيت أطفال مخمل كوردوروي مغسول',
+  'Quilted Down Lightweight Puffer': 'سترة أطفال مبطنة بالريش خفيفة',
+  'Tiered Linen Ceremony Dress': 'فستان مناسبات كتان بطبقات أنيقة',
+  'Junior Tailored Linen Suit': 'بدلة كتان مفصلة للأطفال',
+  'Soft Sole Leather Pre-Walkers': 'حذاء مشي أول جلدي بنعل ناعم',
+  'Junior Suede Chelsea Boots': 'بوت تشيلسي شامواه للأطفال',
+  'Teen Architectural Loopback Hoodie': 'هودي شبابي بقصة معمارية مريحة',
+  'Teen Fluid Tailored Trousers': 'بنطال شبابي مفصل بقماش انسيابي',
+  'Heritage Baby Cashmere Blanket': 'بطانية أطفال فاخرة من كشمير هيريتدج',
+  'Summer Linen Smock & Shorts Set': 'طقم صيفي سموك وشورت كتان',
+  'Reflective School Anorak': 'سترة مدرسية واقية عاكسة للضوء',
+  'Low-Top Organic Canvas Sneakers': 'سنيكرز قماشي من القطن العضوي',
+  'Equinox Ribbed Merino Beanie': 'قبعة بيني مضلعة من صوف الميرينو',
+
+  // BEAUTY (15)
+  'Damascus Rose Cellular Mist': 'رذاذ الورد الدمشقي الخلوي المنعش',
+  'Obsidian Oud Extrait de Parfum': 'عطر أوبسيديان عود - إكستري دو بارفان',
+  'Velvet Matte Lip Elixir - Terracotta': 'إكسير شفاه مخملي مطفأ - تيراكوتا',
+  'Bian Stone Sculpting Gua Sha': 'أداة غوا شا لنحت الوجه بحجر بيان',
+  'Botanical Squalane Recovery Oil': 'زيت التعافي بالسكوالين النباتي النقي',
+  'Santal & Silt Extrait de Parfum': 'عطر صندل وسيلت - إكستري دو بارفان',
+  'Peptide Contour Eye Balm': 'بلسم الببتيدات لشد محيط العينين',
+  'Honey Infused Lip Plumping Glaze': 'ملمع شفاه ممتلئ بخلاصة العسل النقي',
+  'Mineral Veil Invisible Sun Shield SPF 50': 'واقي شمس معدني شفاف SPF 50',
+  'Hand-Pressed Amber Resin Cones': 'مخاريط بخور صمغ العنبر المعصور يدوياً',
+  'Silk Peptide Rich Body Creme': 'كريم جسم غني ببروتينات الحرير',
+  'Cashmere & Cedarwood Hand Salve': 'مرهم اليدين بالكشمير وخشب الأرز',
+  'Noir Curling Clean Mineral Mascara': 'ماسكارا معدنية نقية لرموش مموجة',
+  'Vetiver Solstice Botanical Cologne': 'كولونيا نباتية بنجيل الهند والانقلاب الشمسي',
+  'Archive Discovery Fragrance Set (5x10ml)': 'مجموعة استكشاف العطور الأرشيفية (5×10 مل)',
+
+  // HOME (15)
+  'Fluted Travertine Sculptural Vessel': 'مزهرية نحتية مضلعة من حجر الترافرتين',
+  'Belgian Washed Linen Duvet Set': 'طقم غطاء لحاف من الكتان البلجيكي المغسول',
+  'Brutalist Architectural Pillar Candle': 'شمعة عمودية بتصميم معماري بروتالي',
+  'Mouth-Blown Smoked Glass Carafe Set': 'طقم دورق زجاجي مدخن منفوخ يدوياً',
+  'Handwoven Boucle Wool Blanket': 'بطانية صوف بوكليه منسوجة يدوياً',
+  'Cast Bronze Monolith Bookends (Pair)': 'زوج مساند كتب مونوليث من البرونز المسبوك',
+  'Hand-Thrown Stoneware Ribbed Pitcher': 'إبريق فخار حجري مضلع مصنوع يدوياً',
+  'Sculpted Alabaster Luminary': 'حامل شموع نحتي من حجر الألباستر',
+  'Wabi-Sabi Washed Linen Table Runner': 'مفرش طاولة كتان بأسلوب وابي-سابي',
+  'Honed Walnut Sculptural Valet Tray': 'صينية تنظيم نحتية من خشب الجوز المصقول',
+  'Matte Black Basalt Incense Dish': 'صحن بخور من صخر البازلت الأسود المطفأ',
+  'Organic Turkish Cotton Waffle Bath Sheet': 'منشفة حمام وافل كبيرة من القطن التركي',
+  'Brutalist Fluted Concrete Planter': 'أصيص خرساني مضلع بأسلوب بروتالي',
+  'Hand-Blown Minimalist Oil Lamp': 'مصباح زيت تبسيطي من الزجاج المنفوخ',
+  'Archive Cashmere & Suede Cushion': 'وسادة فاخرة من الكشمير والجلد السويدي'
 };
+
+const fallbackSvg = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800"><rect width="100%" height="100%" fill="%23141416"/><text x="50%" y="46%" font-family="sans-serif" font-size="26" font-weight="700" fill="%23D4AF37" text-anchor="middle" letter-spacing="4">KAYAN</text><text x="50%" y="52%" font-family="sans-serif" font-size="14" fill="%238E8E93" text-anchor="middle" letter-spacing="2">ATELIER COLLECTION</text></svg>`;
 
 function createProductCardHtml(product) {
   const isWishlisted = store.isInWishlist(product.id);
-  const primaryImg = product.images[0] || '';
-  const secondaryImg = product.images[1] || primaryImg;
+  const primaryImg = (product.images && product.images[0]) || '';
+  const secondaryImg = (product.images && product.images[1]) || primaryImg;
   const isAr = store.getState().language === 'ar';
 
   const displayName = isAr
@@ -6079,8 +6260,8 @@ function createProductCardHtml(product) {
         </button>
 
         <a href="${resolveUrl(`pages/product.html?slug=${product.slug}`)}">
-          <img src="${primaryImg}" alt="${displayName}" class="product-card-img-primary" loading="lazy"/>
-          <img src="${secondaryImg}" alt="${displayName} alternate view" class="product-card-img-secondary" loading="lazy"/>
+          <img src="${primaryImg}" alt="${displayName}" class="product-card-img-primary" loading="lazy" onerror="this.onerror=null; this.src='${fallbackSvg}';"/>
+          <img src="${secondaryImg}" alt="${displayName} alternate view" class="product-card-img-secondary" loading="lazy" onerror="this.onerror=null; this.src='${fallbackSvg}';"/>
         </a>
 
         <!-- Quick Actions Overlay -->
@@ -8811,7 +8992,8 @@ function applyFiltersAndSort() {
     }
     // Badges
     if (selectedBadges.size > 0) {
-      const hasBadge = (p.badges || []).some((b) => selectedBadges.has(b));
+      const bList = Array.isArray(p.badges) ? p.badges : (typeof p.badges === 'string' && p.badges.trim() ? [p.badges] : []);
+      const hasBadge = bList.some((b) => selectedBadges.has(b));
       if (!hasBadge) return false;
     }
     return true;
@@ -9054,20 +9236,44 @@ function initProductPage() {
     updatePricesUI();
     renderRelatedProducts();
   };
+
+  // Immediate language switch hook (100% Arabic without refresh)
+  events.on('i18n:changed', () => {
+    renderBreadcrumbs();
+    renderGallery();
+    renderProductDetails();
+    renderAccordions();
+    renderReviewsSection();
+    renderRelatedProducts();
+    initStickyMobileBar();
+  });
 }
 
 function renderBreadcrumbs() {
   const el = document.querySelector('#pdp-breadcrumbs-mount');
   if (!el) return;
 
+  const isAr = store.getState().language === 'ar';
+  const deptTranslations = {
+    women: 'النساء',
+    men: 'الرجال',
+    kids: 'الأطفال',
+    beauty: 'الجمال والعطور',
+    home: 'المنزل والديكور'
+  };
+  const deptLabel = isAr ? (deptTranslations[currentProduct.department] || currentProduct.department) : currentProduct.department;
+  const prodLabel = isAr ? (currentProduct.nameAr || arabicNameMap[currentProduct.name] || currentProduct.name) : currentProduct.name;
+
   el.innerHTML = `
-    <a href="${resolveUrl('index.html')}">Atelier</a>
+    <a href="${resolveUrl('index.html')}">${isAr ? 'الأتيليه' : 'Atelier'}</a>
     <span>/</span>
-    <a href="${resolveUrl(`pages/shop.html?dept=${currentProduct.department}`)}" style="text-transform:capitalize;">${currentProduct.department}</a>
+    <a href="${resolveUrl(`pages/shop.html?dept=${currentProduct.department}`)}" style="text-transform:capitalize;">${deptLabel}</a>
     <span>/</span>
-    <span style="color:var(--color-text);">${currentProduct.name}</span>
+    <span style="color:var(--color-text);">${prodLabel}</span>
   `;
 }
+
+const pdpFallbackSvg = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000"><rect width="100%" height="100%" fill="%23141416"/><text x="50%" y="46%" font-family="sans-serif" font-size="28" font-weight="700" fill="%23D4AF37" text-anchor="middle" letter-spacing="4">KAYAN ATELIER</text><text x="50%" y="52%" font-family="sans-serif" font-size="14" fill="%238E8E93" text-anchor="middle" letter-spacing="1">HAUTE COUTURE</text></svg>`;
 
 function renderGallery() {
   const mainImgWrap = document.querySelector('#pdp-main-image-wrap');
@@ -9076,31 +9282,66 @@ function renderGallery() {
 
   if (!mainImgWrap || !thumbWrap) return;
 
-  const images = currentProduct.images || [currentProduct.image];
+  const images = (currentProduct.images && currentProduct.images.length > 0)
+    ? currentProduct.images
+    : (currentProduct.image ? [currentProduct.image] : [pdpFallbackSvg]);
 
-  // Render Badges
-  if (badgeWrap && currentProduct.badges) {
-    badgeWrap.innerHTML = currentProduct.badges
-      .map(b => `<span class="product-badge badge-${b.toLowerCase().replace(/\s+/g, '-')}">${b}</span>`)
+  const isAr = store.getState().language === 'ar';
+  const displayName = isAr
+    ? (currentProduct.nameAr || arabicNameMap[currentProduct.name] || currentProduct.name)
+    : currentProduct.name;
+
+  // Render Badges safely without throwing TypeError if badges is string
+  const badgesList = Array.isArray(currentProduct.badges)
+    ? currentProduct.badges
+    : (typeof currentProduct.badges === 'string' && currentProduct.badges.trim() ? [currentProduct.badges] : []);
+
+  if (badgeWrap) {
+    badgeWrap.innerHTML = badgesList
+      .map(b => {
+        const str = String(b || '');
+        let cls = 'badge-new';
+        let label = str;
+        const lower = str.toLowerCase();
+        if (lower.includes('sale') || lower.includes('archive')) {
+          cls = 'badge-sale';
+          if (isAr) label = 'عرض أرشيفي';
+        } else if (lower.includes('exclusive')) {
+          cls = 'badge-exclusive';
+          if (isAr) label = 'حصري إلكترونياً';
+        } else if (lower.includes('eco')) {
+          cls = 'badge-eco';
+          if (isAr) label = 'صناعة واعية';
+        } else if (lower.includes('new')) {
+          if (isAr) label = 'وصل حديثاً';
+        } else if (lower.includes('best') || lower.includes('seller')) {
+          if (isAr) label = 'الأكثر طلباً';
+        }
+        return `<span class="product-badge ${cls}">${label}</span>`;
+      })
       .join('');
   }
 
-  // Render Thumbnails
+  // Render Thumbnails with fallback onerror
   thumbWrap.innerHTML = images
     .map(
       (img, i) => `
     <div class="pdp-thumb-item ${i === 0 ? 'active' : ''}" data-idx="${i}">
-      <img src="${img}" alt="${currentProduct.name} Angle ${i + 1}" loading="lazy"/>
+      <img src="${img}" alt="${displayName} Angle ${i + 1}" loading="lazy" onerror="this.onerror=null; this.src='${pdpFallbackSvg}';"/>
     </div>
   `
     )
     .join('');
 
-  // Initial main image
+  // Initial main image with reliable assignment and fallback onerror
   const mainImg = mainImgWrap.querySelector('.pdp-main-img');
   if (mainImg) {
-    mainImg.src = images[0];
-    mainImg.alt = currentProduct.name;
+    mainImg.src = images[0] || pdpFallbackSvg;
+    mainImg.alt = displayName;
+    mainImg.onerror = function() {
+      this.onerror = null;
+      this.src = pdpFallbackSvg;
+    };
   }
 
   // Thumbnail click handlers
@@ -9117,7 +9358,9 @@ function renderGallery() {
 
 function switchGalleryImage(idx) {
   currentImageIndex = idx;
-  const images = currentProduct.images || [currentProduct.image];
+  const images = (currentProduct.images && currentProduct.images.length > 0)
+    ? currentProduct.images
+    : [pdpFallbackSvg];
   const mainImg = document.querySelector('#pdp-main-image-wrap .pdp-main-img');
   const thumbs = document.querySelectorAll('#pdp-thumbnails-mount .pdp-thumb-item');
 
@@ -9164,8 +9407,56 @@ function setupImageZoom(wrap, img) {
 }
 
 function renderProductDetails() {
+  const isAr = store.getState().language === 'ar';
+  const displayName = isAr
+    ? (currentProduct.nameAr || arabicNameMap[currentProduct.name] || currentProduct.name)
+    : currentProduct.name;
+
   const titleEl = document.querySelector('#pdp-title');
-  if (titleEl) titleEl.textContent = currentProduct.name;
+  if (titleEl) titleEl.textContent = displayName;
+
+  const brandTag = document.querySelector('.pdp-brand-tag');
+  if (brandTag) {
+    brandTag.textContent = isAr ? 'كَيَان أتيليه — المجموعة الحصرية' : 'KAYAN Atelier Haute Collection';
+  }
+
+  const fittingGuide = document.querySelector('#pdp-size-guide-btn');
+  if (fittingGuide) {
+    fittingGuide.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      ${isAr ? 'دليل مقاسات الأتيليه ↗' : 'Atelier Fitting Guide'}
+    `;
+  }
+
+  const acquireBtn = document.querySelector('#pdp-add-to-bag-btn');
+  if (acquireBtn) {
+    acquireBtn.innerHTML = `
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <span>${isAr ? 'أضف إلى حقيبة التسوق' : 'Acquire Silhouette'}</span>
+    `;
+  }
+
+  const deliveryBoxText = document.querySelector('.pdp-delivery-box > div');
+  if (deliveryBoxText) {
+    deliveryBoxText.innerHTML = isAr ? `
+      <div>اطلب خلال <span id="pdp-dispatch-timer" class="pdp-delivery-timer">--:--:--</span> لضمان الشحن السريع غداً.</div>
+      <div style="color:var(--color-text-subtle); margin-top:2px;">شحن مجاني محايد للكربون مع DHL Express عالمياً للطلبات فوق 150$.</div>
+    ` : `
+      <div>Order within <span id="pdp-dispatch-timer" class="pdp-delivery-timer">--:--:--</span> for guaranteed next-day dispatch.</div>
+      <div style="color:var(--color-text-subtle); margin-top:2px;">Complimentary carbon-neutral DHL Express worldwide on orders over $150.</div>
+    `;
+  }
+
+  const paletteHeader = document.querySelector('.pdp-colors-section > div:first-child');
+  if (paletteHeader) {
+    const curColorName = (currentProduct.colors && currentProduct.colors[selectedColorIndex]) ? currentProduct.colors[selectedColorIndex].name : '';
+    paletteHeader.innerHTML = `${isAr ? 'اللون المختار' : 'Selected Palette'}: <span id="pdp-selected-color-name" style="color:var(--color-accent); font-weight:700;">${curColorName}</span>`;
+  }
+
+  const sizeHeader = document.querySelector('.pdp-sizes-header > span:first-child');
+  if (sizeHeader) {
+    sizeHeader.textContent = isAr ? 'اختر مقاس القطعة' : 'Select Garment Size';
+  }
 
   updatePricesUI();
 
@@ -9173,7 +9464,11 @@ function renderProductDetails() {
   const ratingEl = document.querySelector('#pdp-rating-score');
   const countEl = document.querySelector('#pdp-reviews-count');
   if (ratingEl) ratingEl.textContent = currentProduct.rating ? currentProduct.rating.toFixed(1) : '4.9';
-  if (countEl) countEl.textContent = `(${currentProduct.reviewCount || 24} Verified Collectors)`;
+  if (countEl) {
+    countEl.textContent = isAr
+      ? `(${currentProduct.reviewCount || 24} تقييماً موثقاً)`
+      : `(${currentProduct.reviewCount || 24} Verified Collectors)`;
+  }
 
   // Render Color Swatches
   const swatchesMount = document.querySelector('#pdp-swatches-mount');
@@ -9331,23 +9626,28 @@ function updateStockIndicator() {
   const stockDot = document.querySelector('#pdp-stock-dot');
   if (!stockStatusText) return;
 
+  const isAr = store.getState().language === 'ar';
   const currentSizeObj = (currentProduct.sizes || []).find(s => s.size === selectedSize);
   const stock = currentSizeObj ? currentSizeObj.stock : 10;
 
   if (stock <= 0) {
-    stockStatusText.textContent = 'Archived / Out of stock';
+    stockStatusText.textContent = isAr ? 'غير متوفر حالياً في المخزن' : 'Archived / Out of stock';
     if (stockDot) {
       stockDot.style.background = '#ef4444';
       stockDot.className = 'pdp-stock-dot';
     }
   } else if (stock <= 5) {
-    stockStatusText.textContent = `Scarcity: Only ${stock} pieces remain in this size`;
+    stockStatusText.textContent = isAr
+      ? `كمية محدودة: تبقى فقط ${stock} قطع في هذا المقاس`
+      : `Scarcity: Only ${stock} pieces remain in this size`;
     if (stockDot) {
       stockDot.style.background = '#f59e0b';
       stockDot.className = 'pdp-stock-dot low';
     }
   } else {
-    stockStatusText.textContent = 'In Stock — Available for immediate dispatch';
+    stockStatusText.textContent = isAr
+      ? 'متوفر في مخزن الأتيليه — جاهز للشحن الفوري'
+      : 'In Stock — Available for immediate dispatch';
     if (stockDot) {
       stockDot.style.background = '#22c55e';
       stockDot.className = 'pdp-stock-dot';
@@ -9356,8 +9656,9 @@ function updateStockIndicator() {
 }
 
 function handleAddToCart() {
+  const isAr = store.getState().language === 'ar';
   if (!selectedSize) {
-    toastSystem.warning('Please select a garment size before acquiring.');
+    toastSystem.warning(isAr ? 'يرجى اختيار المقاس المطلوب أولاً.' : 'Please select a garment size before acquiring.');
     return;
   }
 
@@ -9375,7 +9676,7 @@ function handleAddToCart() {
     const originalText = btn.innerHTML;
     btn.innerHTML = `
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      Secured in Bag
+      ${isAr ? 'تمت الإضافة للحقيبة' : 'Secured in Bag'}
     `;
     setTimeout(() => {
       btn.classList.remove('added');
@@ -9419,42 +9720,60 @@ function renderAccordions() {
   const wrap = document.querySelector('#pdp-accordions-mount');
   if (!wrap) return;
 
+  const isAr = store.getState().language === 'ar';
+
+  const notesTitle = isAr ? 'ملاحظات التصميم والقصّة المعمارية' : 'Silhouette & Design Notes';
+  const notesDesc = isAr 
+    ? (currentProduct.descriptionAr || 'صُممت هذه القطعة بدقة معمارية فائقة لتجمع بين الفخامة والراحة الانسيابية للأناقة العصرية اليومية.')
+    : (currentProduct.description || 'Masterfully conceived for the modern collector. Designed with architectural proportion and organic ease.');
+  const fitText = isAr ? 'قصة معمارية فاخرة مطابقة للمقاس المعتاد تماماً.' : (currentProduct.fit || 'True to size architectural drape.');
+  const modelText = isAr ? 'طول العارضة 180 سم وترتدي المقاس S.' : 'Model stands 180cm / 5\'11" wearing Size S.';
+
+  const matTitle = isAr ? 'الأنسجة النبيلة ومصدر الأقمشة' : 'Noble Materials & Provenance';
+  const matComp = isAr ? (currentProduct.materialAr || '100% أنسجة نبيلة مختارة ومطابقة لأعلى معايير الجودة العالمية.') : (currentProduct.material || '100% Certified Noble Fibers.');
+  const matCare = isAr ? 'تنظيف جاف متخصص فقط. يُحفظ في حقيبة الأتيليه القطنية المرفقة لحماية القماش.' : (currentProduct.care || 'Specialist dry clean only. Store in complimentary cedar garment bag provided.');
+  const matProv = isAr ? 'حِيكت وشُطبت يدوياً في مشاغلنا بشمال إيطاليا وفق معايير الاستدامة والحرفية اليدوية العالية.' : 'Spun and hand-finished in our northern Italian atelier under zero-discharge circular water compliance.';
+
+  const shipTitle = isAr ? 'التوصيل المجاني وسياسة الاسترجاع' : 'Complimentary Delivery & White-Glove Returns';
+  const shipText1 = isAr ? 'شحن سريع ومجاني محايد للكربون مع DHL Express عالمياً لجميع الطلبات المؤهلة فوق 150$. مدة التوصيل 2-4 أيام عمل.' : 'Complimentary carbon-neutral DHL Express delivery on all orders over $150. Estimated arrival in 2–4 business days worldwide.';
+  const shipText2 = isAr ? 'استرجاع مجاني من باب المنزل خلال 30 يوماً مع خدمة الاستلام المباشر.' : 'Complimentary doorstep pickup returns within 30 days of acquisition. Custom archive pieces include dedicated concierge return seal.';
+
   wrap.innerHTML = `
     <!-- Silhouette & Cut -->
     <div class="pdp-accordion-item open">
       <button class="pdp-accordion-trigger">
-        <span>Silhouette & Design Notes</span>
+        <span>${notesTitle}</span>
         <span class="pdp-accordion-icon">&darr;</span>
       </button>
       <div class="pdp-accordion-content">
-        <p>${currentProduct.description || 'Masterfully conceived for the modern collector. Designed with architectural proportion and organic ease.'}</p>
-        <p style="margin-top:8px;"><strong>Fit Silhouette:</strong> ${currentProduct.fit || 'True to size architectural drape.'}</p>
-        <p style="margin-top:4px;"><strong>Model Proportions:</strong> Model stands 180cm / 5\'11" wearing Size S.</p>
+        <p>${notesDesc}</p>
+        <p style="margin-top:8px;"><strong>${isAr ? 'القصّة والانسيابية:' : 'Fit Silhouette:'}</strong> ${fitText}</p>
+        <p style="margin-top:4px;"><strong>${isAr ? 'مقاييس العارضة:' : 'Model Proportions:'}</strong> ${modelText}</p>
       </div>
     </div>
 
     <!-- Noble Fibers & Care -->
     <div class="pdp-accordion-item">
       <button class="pdp-accordion-trigger">
-        <span>Noble Materials & Provenance</span>
+        <span>${matTitle}</span>
         <span class="pdp-accordion-icon">&darr;</span>
       </button>
       <div class="pdp-accordion-content">
-        <p><strong>Primary Composition:</strong> ${currentProduct.material || '100% Certified Noble Fibers.'}</p>
-        <p style="margin-top:8px;"><strong>Curatorial Care:</strong> ${currentProduct.care || 'Specialist dry clean only. Store in complimentary cedar garment bag provided.'}</p>
-        <p style="margin-top:8px;"><strong>Provenance:</strong> Spun and hand-finished in our northern Italian atelier under zero-discharge circular water compliance.</p>
+        <p><strong>${isAr ? 'التركيب الأساسي:' : 'Primary Composition:'}</strong> ${matComp}</p>
+        <p style="margin-top:8px;"><strong>${isAr ? 'إرشادات العناية:' : 'Curatorial Care:'}</strong> ${matCare}</p>
+        <p style="margin-top:8px;"><strong>${isAr ? 'المنشأ والحرفية:' : 'Provenance:'}</strong> ${matProv}</p>
       </div>
     </div>
 
     <!-- Complimentary Delivery & White-Glove Returns -->
     <div class="pdp-accordion-item">
       <button class="pdp-accordion-trigger">
-        <span>Complimentary Delivery & White-Glove Returns</span>
+        <span>${shipTitle}</span>
         <span class="pdp-accordion-icon">&darr;</span>
       </button>
       <div class="pdp-accordion-content">
-        <p>Complimentary carbon-neutral DHL Express delivery on all orders over $150. Estimated arrival in 2–4 business days worldwide.</p>
-        <p style="margin-top:8px;">Complimentary doorstep pickup returns within 30 days of acquisition. Custom archive pieces include dedicated concierge return seal.</p>
+        <p>${shipText1}</p>
+        <p style="margin-top:8px;">${shipText2}</p>
       </div>
     </div>
   `;
@@ -9471,7 +9790,30 @@ function renderReviewsSection() {
   const mount = document.querySelector('#pdp-reviews-list-mount');
   if (!mount) return;
 
-  mount.innerHTML = sampleReviews
+  const isAr = store.getState().language === 'ar';
+
+  const reviewsHeading = document.querySelector('.pdp-reviews-section h2');
+  if (reviewsHeading) reviewsHeading.textContent = isAr ? 'آراء وتقييمات المقتنين' : 'Collector Impressions & Reviews';
+
+  const verifiedSub = document.querySelector('.reviews-summary-grid > div:first-child > div:nth-child(3)');
+  if (verifiedSub) verifiedSub.textContent = isAr ? 'بناءً على عمليات شراء موثقة' : 'Based on verified acquisitions';
+
+  const relatedHeading = document.querySelector('section[style*="margin-block:64px"] h2');
+  const relatedDesc = document.querySelector('section[style*="margin-block:64px"] p');
+  const relatedLink = document.querySelector('.editorial-view-all');
+  if (relatedHeading) relatedHeading.textContent = isAr ? 'أكمل إطلالتك المعمارية' : 'Complete The Silhouette';
+  if (relatedDesc) relatedDesc.textContent = isAr ? 'قطع مكملة اختارها صالون التصميم خصيصاً لتناسب إطلالتك.' : 'Complementary architectural pieces selected by our design salon.';
+  if (relatedLink) relatedLink.innerHTML = isAr ? 'عرض الكل &larr;' : 'View All &rarr;';
+
+  const arReviews = [
+    { author: 'سارة المنصوري', city: 'دبي', rating: 5, date: 'منذ أسبوعين', title: 'خامة استثنائية وانسيابية ساحرة', comment: 'القطعة تحفة فنية حقيقية، القماش فخم جداً ومريح وناعم. المقاس مضبوط بالملي.', fit: 'مطابق للمقاس تماماً', helpful: 18 },
+    { author: 'فيصل العتيبي', city: 'الرياض', rating: 5, date: 'منذ 3 أسابيع', title: 'جودة عالمية لا تقل عن كبرى دور الأزياء', comment: 'الخياطة والتفاصيل المعمارية راقية جداً. وصل التغليف بحالة ممتازة ومع كيس حفظ قماشي فاخر.', fit: 'مثالي', helpful: 24 },
+    { author: 'نورا الهاشمي', city: 'أبوظبي', rating: 5, date: 'منذ شهر', title: 'أفضل قطعة أضفتها لدولابي هذا الموسم', comment: 'اللون والتطريز في الطبيعة أجمل بكثير من الصور. شحن سريع ومميز.', fit: 'مطابق للمقاس', helpful: 15 }
+  ];
+
+  const activeReviews = isAr ? arReviews : sampleReviews;
+
+  mount.innerHTML = activeReviews
     .map(
       r => `
     <div style="padding-block:20px; border-bottom:1px solid var(--color-border-subtle);">
@@ -9487,11 +9829,11 @@ function renderReviewsSection() {
       <h4 style="font-size:14px; font-weight:700; margin-top:10px;">${r.title}</h4>
       <p style="font-size:13px; color:var(--color-text-muted); line-height:1.6; margin-top:4px;">${r.comment}</p>
       <div style="display:flex; gap:16px; margin-top:10px; font-size:11px; color:var(--color-text-subtle);">
-        <span>Fit assessment: <strong>${r.fit}</strong></span>
+        <span>${isAr ? 'تقييم المقاس:' : 'Fit assessment:'} <strong>${r.fit}</strong></span>
         <span>&bull;</span>
-        <span style="color:#15803d; font-weight:600;">&#10003; Verified Acquisition</span>
+        <span style="color:#15803d; font-weight:600;">&#10003; ${isAr ? 'شراء موثق' : 'Verified Acquisition'}</span>
         <span>&bull;</span>
-        <span>${r.helpful} collectors found this insightful</span>
+        <span>${r.helpful} ${isAr ? 'مقتنٍ وجدوا هذا التقييم مفيداً' : 'collectors found this insightful'}</span>
       </div>
     </div>
   `
@@ -9524,8 +9866,14 @@ function initStickyMobileBar() {
     barPrice.textContent = i18n.formatPrice(currentProduct.salePrice || currentProduct.price);
   }
 
+  const isAr = store.getState().language === 'ar';
+  const barTitle = bar.querySelector('div > div:first-child');
+  if (barTitle) {
+    barTitle.textContent = isAr ? 'طلب الحجز' : 'Acquisition Reserve';
+  }
   if (barBtn) {
-    barBtn.addEventListener('click', handleAddToCart);
+    barBtn.textContent = isAr ? 'أضف للحقيبة' : 'Add to Bag';
+    barBtn.onclick = handleAddToCart;
   }
 
   window.addEventListener('scroll', () => {

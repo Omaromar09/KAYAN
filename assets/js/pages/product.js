@@ -10,7 +10,7 @@ import { store } from '../core/store.js';
 import { i18n } from '../core/i18n.js';
 import { events } from '../core/events.js';
 import { resolveUrl } from '../core/router-helpers.js';
-import { createProductCardHtml, bindProductCardEvents } from '../components/product-card.js';
+import { createProductCardHtml, bindProductCardEvents, arabicNameMap } from '../components/product-card.js';
 import { toastSystem } from '../components/toast.js';
 
 let currentProduct = null;
@@ -61,20 +61,44 @@ export function initProductPage() {
     updatePricesUI();
     renderRelatedProducts();
   };
+
+  // Immediate language switch hook (100% Arabic without refresh)
+  events.on('i18n:changed', () => {
+    renderBreadcrumbs();
+    renderGallery();
+    renderProductDetails();
+    renderAccordions();
+    renderReviewsSection();
+    renderRelatedProducts();
+    initStickyMobileBar();
+  });
 }
 
 function renderBreadcrumbs() {
   const el = document.querySelector('#pdp-breadcrumbs-mount');
   if (!el) return;
 
+  const isAr = store.getState().language === 'ar';
+  const deptTranslations = {
+    women: 'النساء',
+    men: 'الرجال',
+    kids: 'الأطفال',
+    beauty: 'الجمال والعطور',
+    home: 'المنزل والديكور'
+  };
+  const deptLabel = isAr ? (deptTranslations[currentProduct.department] || currentProduct.department) : currentProduct.department;
+  const prodLabel = isAr ? (currentProduct.nameAr || arabicNameMap[currentProduct.name] || currentProduct.name) : currentProduct.name;
+
   el.innerHTML = `
-    <a href="${resolveUrl('index.html')}">Atelier</a>
+    <a href="${resolveUrl('index.html')}">${isAr ? 'الأتيليه' : 'Atelier'}</a>
     <span>/</span>
-    <a href="${resolveUrl(`pages/shop.html?dept=${currentProduct.department}`)}" style="text-transform:capitalize;">${currentProduct.department}</a>
+    <a href="${resolveUrl(`pages/shop.html?dept=${currentProduct.department}`)}" style="text-transform:capitalize;">${deptLabel}</a>
     <span>/</span>
-    <span style="color:var(--color-text);">${currentProduct.name}</span>
+    <span style="color:var(--color-text);">${prodLabel}</span>
   `;
 }
+
+const pdpFallbackSvg = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000"><rect width="100%" height="100%" fill="%23141416"/><text x="50%" y="46%" font-family="sans-serif" font-size="28" font-weight="700" fill="%23D4AF37" text-anchor="middle" letter-spacing="4">KAYAN ATELIER</text><text x="50%" y="52%" font-family="sans-serif" font-size="14" fill="%238E8E93" text-anchor="middle" letter-spacing="1">HAUTE COUTURE</text></svg>`;
 
 function renderGallery() {
   const mainImgWrap = document.querySelector('#pdp-main-image-wrap');
@@ -83,31 +107,66 @@ function renderGallery() {
 
   if (!mainImgWrap || !thumbWrap) return;
 
-  const images = currentProduct.images || [currentProduct.image];
+  const images = (currentProduct.images && currentProduct.images.length > 0)
+    ? currentProduct.images
+    : (currentProduct.image ? [currentProduct.image] : [pdpFallbackSvg]);
 
-  // Render Badges
-  if (badgeWrap && currentProduct.badges) {
-    badgeWrap.innerHTML = currentProduct.badges
-      .map(b => `<span class="product-badge badge-${b.toLowerCase().replace(/\s+/g, '-')}">${b}</span>`)
+  const isAr = store.getState().language === 'ar';
+  const displayName = isAr
+    ? (currentProduct.nameAr || arabicNameMap[currentProduct.name] || currentProduct.name)
+    : currentProduct.name;
+
+  // Render Badges safely without throwing TypeError if badges is string
+  const badgesList = Array.isArray(currentProduct.badges)
+    ? currentProduct.badges
+    : (typeof currentProduct.badges === 'string' && currentProduct.badges.trim() ? [currentProduct.badges] : []);
+
+  if (badgeWrap) {
+    badgeWrap.innerHTML = badgesList
+      .map(b => {
+        const str = String(b || '');
+        let cls = 'badge-new';
+        let label = str;
+        const lower = str.toLowerCase();
+        if (lower.includes('sale') || lower.includes('archive')) {
+          cls = 'badge-sale';
+          if (isAr) label = 'عرض أرشيفي';
+        } else if (lower.includes('exclusive')) {
+          cls = 'badge-exclusive';
+          if (isAr) label = 'حصري إلكترونياً';
+        } else if (lower.includes('eco')) {
+          cls = 'badge-eco';
+          if (isAr) label = 'صناعة واعية';
+        } else if (lower.includes('new')) {
+          if (isAr) label = 'وصل حديثاً';
+        } else if (lower.includes('best') || lower.includes('seller')) {
+          if (isAr) label = 'الأكثر طلباً';
+        }
+        return `<span class="product-badge ${cls}">${label}</span>`;
+      })
       .join('');
   }
 
-  // Render Thumbnails
+  // Render Thumbnails with fallback onerror
   thumbWrap.innerHTML = images
     .map(
       (img, i) => `
     <div class="pdp-thumb-item ${i === 0 ? 'active' : ''}" data-idx="${i}">
-      <img src="${img}" alt="${currentProduct.name} Angle ${i + 1}" loading="lazy"/>
+      <img src="${img}" alt="${displayName} Angle ${i + 1}" loading="lazy" onerror="this.onerror=null; this.src='${pdpFallbackSvg}';"/>
     </div>
   `
     )
     .join('');
 
-  // Initial main image
+  // Initial main image with reliable assignment and fallback onerror
   const mainImg = mainImgWrap.querySelector('.pdp-main-img');
   if (mainImg) {
-    mainImg.src = images[0];
-    mainImg.alt = currentProduct.name;
+    mainImg.src = images[0] || pdpFallbackSvg;
+    mainImg.alt = displayName;
+    mainImg.onerror = function() {
+      this.onerror = null;
+      this.src = pdpFallbackSvg;
+    };
   }
 
   // Thumbnail click handlers
@@ -124,7 +183,9 @@ function renderGallery() {
 
 function switchGalleryImage(idx) {
   currentImageIndex = idx;
-  const images = currentProduct.images || [currentProduct.image];
+  const images = (currentProduct.images && currentProduct.images.length > 0)
+    ? currentProduct.images
+    : [pdpFallbackSvg];
   const mainImg = document.querySelector('#pdp-main-image-wrap .pdp-main-img');
   const thumbs = document.querySelectorAll('#pdp-thumbnails-mount .pdp-thumb-item');
 
@@ -171,8 +232,56 @@ function setupImageZoom(wrap, img) {
 }
 
 function renderProductDetails() {
+  const isAr = store.getState().language === 'ar';
+  const displayName = isAr
+    ? (currentProduct.nameAr || arabicNameMap[currentProduct.name] || currentProduct.name)
+    : currentProduct.name;
+
   const titleEl = document.querySelector('#pdp-title');
-  if (titleEl) titleEl.textContent = currentProduct.name;
+  if (titleEl) titleEl.textContent = displayName;
+
+  const brandTag = document.querySelector('.pdp-brand-tag');
+  if (brandTag) {
+    brandTag.textContent = isAr ? 'كَيَان أتيليه — المجموعة الحصرية' : 'KAYAN Atelier Haute Collection';
+  }
+
+  const fittingGuide = document.querySelector('#pdp-size-guide-btn');
+  if (fittingGuide) {
+    fittingGuide.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      ${isAr ? 'دليل مقاسات الأتيليه ↗' : 'Atelier Fitting Guide'}
+    `;
+  }
+
+  const acquireBtn = document.querySelector('#pdp-add-to-bag-btn');
+  if (acquireBtn) {
+    acquireBtn.innerHTML = `
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <span>${isAr ? 'أضف إلى حقيبة التسوق' : 'Acquire Silhouette'}</span>
+    `;
+  }
+
+  const deliveryBoxText = document.querySelector('.pdp-delivery-box > div');
+  if (deliveryBoxText) {
+    deliveryBoxText.innerHTML = isAr ? `
+      <div>اطلب خلال <span id="pdp-dispatch-timer" class="pdp-delivery-timer">--:--:--</span> لضمان الشحن السريع غداً.</div>
+      <div style="color:var(--color-text-subtle); margin-top:2px;">شحن مجاني محايد للكربون مع DHL Express عالمياً للطلبات فوق 150$.</div>
+    ` : `
+      <div>Order within <span id="pdp-dispatch-timer" class="pdp-delivery-timer">--:--:--</span> for guaranteed next-day dispatch.</div>
+      <div style="color:var(--color-text-subtle); margin-top:2px;">Complimentary carbon-neutral DHL Express worldwide on orders over $150.</div>
+    `;
+  }
+
+  const paletteHeader = document.querySelector('.pdp-colors-section > div:first-child');
+  if (paletteHeader) {
+    const curColorName = (currentProduct.colors && currentProduct.colors[selectedColorIndex]) ? currentProduct.colors[selectedColorIndex].name : '';
+    paletteHeader.innerHTML = `${isAr ? 'اللون المختار' : 'Selected Palette'}: <span id="pdp-selected-color-name" style="color:var(--color-accent); font-weight:700;">${curColorName}</span>`;
+  }
+
+  const sizeHeader = document.querySelector('.pdp-sizes-header > span:first-child');
+  if (sizeHeader) {
+    sizeHeader.textContent = isAr ? 'اختر مقاس القطعة' : 'Select Garment Size';
+  }
 
   updatePricesUI();
 
@@ -180,7 +289,11 @@ function renderProductDetails() {
   const ratingEl = document.querySelector('#pdp-rating-score');
   const countEl = document.querySelector('#pdp-reviews-count');
   if (ratingEl) ratingEl.textContent = currentProduct.rating ? currentProduct.rating.toFixed(1) : '4.9';
-  if (countEl) countEl.textContent = `(${currentProduct.reviewCount || 24} Verified Collectors)`;
+  if (countEl) {
+    countEl.textContent = isAr
+      ? `(${currentProduct.reviewCount || 24} تقييماً موثقاً)`
+      : `(${currentProduct.reviewCount || 24} Verified Collectors)`;
+  }
 
   // Render Color Swatches
   const swatchesMount = document.querySelector('#pdp-swatches-mount');
@@ -338,23 +451,28 @@ function updateStockIndicator() {
   const stockDot = document.querySelector('#pdp-stock-dot');
   if (!stockStatusText) return;
 
+  const isAr = store.getState().language === 'ar';
   const currentSizeObj = (currentProduct.sizes || []).find(s => s.size === selectedSize);
   const stock = currentSizeObj ? currentSizeObj.stock : 10;
 
   if (stock <= 0) {
-    stockStatusText.textContent = 'Archived / Out of stock';
+    stockStatusText.textContent = isAr ? 'غير متوفر حالياً في المخزن' : 'Archived / Out of stock';
     if (stockDot) {
       stockDot.style.background = '#ef4444';
       stockDot.className = 'pdp-stock-dot';
     }
   } else if (stock <= 5) {
-    stockStatusText.textContent = `Scarcity: Only ${stock} pieces remain in this size`;
+    stockStatusText.textContent = isAr
+      ? `كمية محدودة: تبقى فقط ${stock} قطع في هذا المقاس`
+      : `Scarcity: Only ${stock} pieces remain in this size`;
     if (stockDot) {
       stockDot.style.background = '#f59e0b';
       stockDot.className = 'pdp-stock-dot low';
     }
   } else {
-    stockStatusText.textContent = 'In Stock — Available for immediate dispatch';
+    stockStatusText.textContent = isAr
+      ? 'متوفر في مخزن الأتيليه — جاهز للشحن الفوري'
+      : 'In Stock — Available for immediate dispatch';
     if (stockDot) {
       stockDot.style.background = '#22c55e';
       stockDot.className = 'pdp-stock-dot';
@@ -363,8 +481,9 @@ function updateStockIndicator() {
 }
 
 function handleAddToCart() {
+  const isAr = store.getState().language === 'ar';
   if (!selectedSize) {
-    toastSystem.warning('Please select a garment size before acquiring.');
+    toastSystem.warning(isAr ? 'يرجى اختيار المقاس المطلوب أولاً.' : 'Please select a garment size before acquiring.');
     return;
   }
 
@@ -382,7 +501,7 @@ function handleAddToCart() {
     const originalText = btn.innerHTML;
     btn.innerHTML = `
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      Secured in Bag
+      ${isAr ? 'تمت الإضافة للحقيبة' : 'Secured in Bag'}
     `;
     setTimeout(() => {
       btn.classList.remove('added');
@@ -426,42 +545,60 @@ function renderAccordions() {
   const wrap = document.querySelector('#pdp-accordions-mount');
   if (!wrap) return;
 
+  const isAr = store.getState().language === 'ar';
+
+  const notesTitle = isAr ? 'ملاحظات التصميم والقصّة المعمارية' : 'Silhouette & Design Notes';
+  const notesDesc = isAr 
+    ? (currentProduct.descriptionAr || 'صُممت هذه القطعة بدقة معمارية فائقة لتجمع بين الفخامة والراحة الانسيابية للأناقة العصرية اليومية.')
+    : (currentProduct.description || 'Masterfully conceived for the modern collector. Designed with architectural proportion and organic ease.');
+  const fitText = isAr ? 'قصة معمارية فاخرة مطابقة للمقاس المعتاد تماماً.' : (currentProduct.fit || 'True to size architectural drape.');
+  const modelText = isAr ? 'طول العارضة 180 سم وترتدي المقاس S.' : 'Model stands 180cm / 5\'11" wearing Size S.';
+
+  const matTitle = isAr ? 'الأنسجة النبيلة ومصدر الأقمشة' : 'Noble Materials & Provenance';
+  const matComp = isAr ? (currentProduct.materialAr || '100% أنسجة نبيلة مختارة ومطابقة لأعلى معايير الجودة العالمية.') : (currentProduct.material || '100% Certified Noble Fibers.');
+  const matCare = isAr ? 'تنظيف جاف متخصص فقط. يُحفظ في حقيبة الأتيليه القطنية المرفقة لحماية القماش.' : (currentProduct.care || 'Specialist dry clean only. Store in complimentary cedar garment bag provided.');
+  const matProv = isAr ? 'حِيكت وشُطبت يدوياً في مشاغلنا بشمال إيطاليا وفق معايير الاستدامة والحرفية اليدوية العالية.' : 'Spun and hand-finished in our northern Italian atelier under zero-discharge circular water compliance.';
+
+  const shipTitle = isAr ? 'التوصيل المجاني وسياسة الاسترجاع' : 'Complimentary Delivery & White-Glove Returns';
+  const shipText1 = isAr ? 'شحن سريع ومجاني محايد للكربون مع DHL Express عالمياً لجميع الطلبات المؤهلة فوق 150$. مدة التوصيل 2-4 أيام عمل.' : 'Complimentary carbon-neutral DHL Express delivery on all orders over $150. Estimated arrival in 2–4 business days worldwide.';
+  const shipText2 = isAr ? 'استرجاع مجاني من باب المنزل خلال 30 يوماً مع خدمة الاستلام المباشر.' : 'Complimentary doorstep pickup returns within 30 days of acquisition. Custom archive pieces include dedicated concierge return seal.';
+
   wrap.innerHTML = `
     <!-- Silhouette & Cut -->
     <div class="pdp-accordion-item open">
       <button class="pdp-accordion-trigger">
-        <span>Silhouette & Design Notes</span>
+        <span>${notesTitle}</span>
         <span class="pdp-accordion-icon">&darr;</span>
       </button>
       <div class="pdp-accordion-content">
-        <p>${currentProduct.description || 'Masterfully conceived for the modern collector. Designed with architectural proportion and organic ease.'}</p>
-        <p style="margin-top:8px;"><strong>Fit Silhouette:</strong> ${currentProduct.fit || 'True to size architectural drape.'}</p>
-        <p style="margin-top:4px;"><strong>Model Proportions:</strong> Model stands 180cm / 5\'11" wearing Size S.</p>
+        <p>${notesDesc}</p>
+        <p style="margin-top:8px;"><strong>${isAr ? 'القصّة والانسيابية:' : 'Fit Silhouette:'}</strong> ${fitText}</p>
+        <p style="margin-top:4px;"><strong>${isAr ? 'مقاييس العارضة:' : 'Model Proportions:'}</strong> ${modelText}</p>
       </div>
     </div>
 
     <!-- Noble Fibers & Care -->
     <div class="pdp-accordion-item">
       <button class="pdp-accordion-trigger">
-        <span>Noble Materials & Provenance</span>
+        <span>${matTitle}</span>
         <span class="pdp-accordion-icon">&darr;</span>
       </button>
       <div class="pdp-accordion-content">
-        <p><strong>Primary Composition:</strong> ${currentProduct.material || '100% Certified Noble Fibers.'}</p>
-        <p style="margin-top:8px;"><strong>Curatorial Care:</strong> ${currentProduct.care || 'Specialist dry clean only. Store in complimentary cedar garment bag provided.'}</p>
-        <p style="margin-top:8px;"><strong>Provenance:</strong> Spun and hand-finished in our northern Italian atelier under zero-discharge circular water compliance.</p>
+        <p><strong>${isAr ? 'التركيب الأساسي:' : 'Primary Composition:'}</strong> ${matComp}</p>
+        <p style="margin-top:8px;"><strong>${isAr ? 'إرشادات العناية:' : 'Curatorial Care:'}</strong> ${matCare}</p>
+        <p style="margin-top:8px;"><strong>${isAr ? 'المنشأ والحرفية:' : 'Provenance:'}</strong> ${matProv}</p>
       </div>
     </div>
 
     <!-- Complimentary Delivery & White-Glove Returns -->
     <div class="pdp-accordion-item">
       <button class="pdp-accordion-trigger">
-        <span>Complimentary Delivery & White-Glove Returns</span>
+        <span>${shipTitle}</span>
         <span class="pdp-accordion-icon">&darr;</span>
       </button>
       <div class="pdp-accordion-content">
-        <p>Complimentary carbon-neutral DHL Express delivery on all orders over $150. Estimated arrival in 2–4 business days worldwide.</p>
-        <p style="margin-top:8px;">Complimentary doorstep pickup returns within 30 days of acquisition. Custom archive pieces include dedicated concierge return seal.</p>
+        <p>${shipText1}</p>
+        <p style="margin-top:8px;">${shipText2}</p>
       </div>
     </div>
   `;
@@ -478,7 +615,30 @@ function renderReviewsSection() {
   const mount = document.querySelector('#pdp-reviews-list-mount');
   if (!mount) return;
 
-  mount.innerHTML = sampleReviews
+  const isAr = store.getState().language === 'ar';
+
+  const reviewsHeading = document.querySelector('.pdp-reviews-section h2');
+  if (reviewsHeading) reviewsHeading.textContent = isAr ? 'آراء وتقييمات المقتنين' : 'Collector Impressions & Reviews';
+
+  const verifiedSub = document.querySelector('.reviews-summary-grid > div:first-child > div:nth-child(3)');
+  if (verifiedSub) verifiedSub.textContent = isAr ? 'بناءً على عمليات شراء موثقة' : 'Based on verified acquisitions';
+
+  const relatedHeading = document.querySelector('section[style*="margin-block:64px"] h2');
+  const relatedDesc = document.querySelector('section[style*="margin-block:64px"] p');
+  const relatedLink = document.querySelector('.editorial-view-all');
+  if (relatedHeading) relatedHeading.textContent = isAr ? 'أكمل إطلالتك المعمارية' : 'Complete The Silhouette';
+  if (relatedDesc) relatedDesc.textContent = isAr ? 'قطع مكملة اختارها صالون التصميم خصيصاً لتناسب إطلالتك.' : 'Complementary architectural pieces selected by our design salon.';
+  if (relatedLink) relatedLink.innerHTML = isAr ? 'عرض الكل &larr;' : 'View All &rarr;';
+
+  const arReviews = [
+    { author: 'سارة المنصوري', city: 'دبي', rating: 5, date: 'منذ أسبوعين', title: 'خامة استثنائية وانسيابية ساحرة', comment: 'القطعة تحفة فنية حقيقية، القماش فخم جداً ومريح وناعم. المقاس مضبوط بالملي.', fit: 'مطابق للمقاس تماماً', helpful: 18 },
+    { author: 'فيصل العتيبي', city: 'الرياض', rating: 5, date: 'منذ 3 أسابيع', title: 'جودة عالمية لا تقل عن كبرى دور الأزياء', comment: 'الخياطة والتفاصيل المعمارية راقية جداً. وصل التغليف بحالة ممتازة ومع كيس حفظ قماشي فاخر.', fit: 'مثالي', helpful: 24 },
+    { author: 'نورا الهاشمي', city: 'أبوظبي', rating: 5, date: 'منذ شهر', title: 'أفضل قطعة أضفتها لدولابي هذا الموسم', comment: 'اللون والتطريز في الطبيعة أجمل بكثير من الصور. شحن سريع ومميز.', fit: 'مطابق للمقاس', helpful: 15 }
+  ];
+
+  const activeReviews = isAr ? arReviews : sampleReviews;
+
+  mount.innerHTML = activeReviews
     .map(
       r => `
     <div style="padding-block:20px; border-bottom:1px solid var(--color-border-subtle);">
@@ -494,11 +654,11 @@ function renderReviewsSection() {
       <h4 style="font-size:14px; font-weight:700; margin-top:10px;">${r.title}</h4>
       <p style="font-size:13px; color:var(--color-text-muted); line-height:1.6; margin-top:4px;">${r.comment}</p>
       <div style="display:flex; gap:16px; margin-top:10px; font-size:11px; color:var(--color-text-subtle);">
-        <span>Fit assessment: <strong>${r.fit}</strong></span>
+        <span>${isAr ? 'تقييم المقاس:' : 'Fit assessment:'} <strong>${r.fit}</strong></span>
         <span>&bull;</span>
-        <span style="color:#15803d; font-weight:600;">&#10003; Verified Acquisition</span>
+        <span style="color:#15803d; font-weight:600;">&#10003; ${isAr ? 'شراء موثق' : 'Verified Acquisition'}</span>
         <span>&bull;</span>
-        <span>${r.helpful} collectors found this insightful</span>
+        <span>${r.helpful} ${isAr ? 'مقتنٍ وجدوا هذا التقييم مفيداً' : 'collectors found this insightful'}</span>
       </div>
     </div>
   `
@@ -531,8 +691,14 @@ function initStickyMobileBar() {
     barPrice.textContent = i18n.formatPrice(currentProduct.salePrice || currentProduct.price);
   }
 
+  const isAr = store.getState().language === 'ar';
+  const barTitle = bar.querySelector('div > div:first-child');
+  if (barTitle) {
+    barTitle.textContent = isAr ? 'طلب الحجز' : 'Acquisition Reserve';
+  }
   if (barBtn) {
-    barBtn.addEventListener('click', handleAddToCart);
+    barBtn.textContent = isAr ? 'أضف للحقيبة' : 'Add to Bag';
+    barBtn.onclick = handleAddToCart;
   }
 
   window.addEventListener('scroll', () => {

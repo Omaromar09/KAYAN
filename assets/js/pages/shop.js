@@ -237,7 +237,8 @@ function applyFiltersAndSort() {
     }
     // Badges
     if (selectedBadges.size > 0) {
-      const hasBadge = (p.badges || []).some((b) => selectedBadges.has(b));
+      const bList = Array.isArray(p.badges) ? p.badges : (typeof p.badges === 'string' && p.badges.trim() ? [p.badges] : []);
+      const hasBadge = bList.some((b) => selectedBadges.has(b));
       if (!hasBadge) return false;
     }
     return true;

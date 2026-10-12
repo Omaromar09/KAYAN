@@ -224,14 +224,34 @@ input[type="checkbox"]:checked + .filter-checkbox-custom {
 .shop-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
 .shop-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 
-@media (max-width: 1024px) {
-  .shop-grid.cols-3, .shop-grid.cols-4 {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1200px) {
+  .shop-grid.cols-4 {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 640px) {
-  .shop-grid.cols-2, .shop-grid.cols-3, .shop-grid.cols-4 {
-    grid-template-columns: repeat(1, 1fr);
+@media (max-width: 900px) {
+  .shop-grid.cols-3, .shop-grid.cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+}
+
+@media (max-width: 600px) {
+  .shop-grid,
+  .shop-grid.cols-2,
+  .shop-grid.cols-3,
+  .shop-grid.cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .shop-grid,
+  .shop-grid.cols-2,
+  .shop-grid.cols-3,
+  .shop-grid.cols-4 {
+    grid-template-columns: 1fr;
   }
 }

@@ -743,3 +743,88 @@
   justify-content: center;
   flex-shrink: 0;
 }
+
+/* ==========================================================================
+   Cross-Device Responsiveness (Mobile Phones, Tablets, Desktop)
+   ========================================================================== */
+
+/* Featured Products Grid Responsiveness */
+.featured-products-responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .featured-products-responsive-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 860px) {
+  .featured-products-responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-products-responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .featured-products-responsive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet Optimizations for Onboarding Panels */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .onboarding-panels-wrap {
+    height: 52vh;
+    min-height: 400px;
+  }
+  .onboarding-panel-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile Optimizations for Hero & Buttons */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 520px;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3.25rem);
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+  }
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    justify-content: center;
+    padding: 14px 24px;
+    width: 100%;
+    text-align: center;
+  }
+  .bento-grid {
+    gap: 12px;
+  }
+  .bento-card {
+    min-height: 240px;
+    padding: var(--space-md);
+  }
+  .flash-sale-box {
+    padding: 24px 16px;
+  }
+}
