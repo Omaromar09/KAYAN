@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAYAN — Form Meets Existence | Luxury Fashion & Living</title>
+  <meta name="description" content="Sculptural silhouettes, sustainable noble fibers, and architectural drape. Discover Women, Men, Kids, Botanical Beauty, and Tactile Living." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Core Design System & Tokens -->
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/rtl.css" />
+
+  <!-- Components CSS -->
+  <link rel="stylesheet" href="assets/css/components/header.css" />
+  <link rel="stylesheet" href="assets/css/components/megamenu.css" />
+  <link rel="stylesheet" href="assets/css/components/cart-drawer.css" />
+  <link rel="stylesheet" href="assets/css/components/search.css" />
+  <link rel="stylesheet" href="assets/css/components/product-card.css" />
+  <link rel="stylesheet" href="assets/css/components/modals.css" />
+  <link rel="stylesheet" href="assets/css/components/toasts.css" />
+  <link rel="stylesheet" href="assets/css/components/cursor.css" />
+  <link rel="stylesheet" href="assets/css/components/footer.css" />
+
+  <!-- Homepage CSS -->
+  <link rel="stylesheet" href="assets/css/pages/home.css" />
+
+  <!-- CDNs: GSAP 3 & Lenis for buttery smooth 60fps animations -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.45/dist/lenis.min.js"></script>
+
+  <!-- Structured Data: Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "KAYAN",
+    "url": "https://kayan-atelier.com",
+    "logo": "https://kayan-atelier.com/assets/img/logo.svg",
+    "description": "Architectural modern-luxe fashion and living collections.",
+    "priceRange": "$$$$"
+  }
+  </script>
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Subtle Tactile Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Page Transition Curtain -->
+  <div class="transition-curtain">
+    <div class="curtain-logo">K A Y A N</div>
+  </div>
+
+  <!-- Global Header Mount (Injected dynamically) -->
+  <div id="site-header-mount"></div>
+
+  <!-- MAIN HOMEPAGE CONTENT -->
+  <main id="main-content">
+
+    <!-- 1. DEPARTMENT ONBOARDING HERO PANELS (Direct Clickable Department Links) -->
+    <section class="onboarding-panels-wrap" aria-label="Select Your Department">
+      <a href="pages/shop.html?dept=women" class="onboarding-panel" data-dept="women" title="Women Collection - تشكيلة النساء">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1000&auto=format&fit=crop&q=80" alt="Women Collection" class="onboarding-panel-bg" loading="eager"/>
+        <div class="onboarding-panel-title">
+          <span class="panel-txt-main">WOMEN</span>
+          <span class="panel-txt-sub">النساء</span>
+        </div>
+      </a>
+      <a href="pages/shop.html?dept=men" class="onboarding-panel" data-dept="men" title="Men Collection - تشكيلة الرجال">
+        <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=1000&auto=format&fit=crop&q=80" alt="Men Collection" class="onboarding-panel-bg" loading="eager"/>
+        <div class="onboarding-panel-title">
+          <span class="panel-txt-main">MEN</span>
+          <span class="panel-txt-sub">الرجال</span>
+        </div>
+      </a>
+      <a href="pages/shop.html?dept=kids" class="onboarding-panel" data-dept="kids" title="Kids Collection - تشكيلة الأطفال">
+        <img src="https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=1000&auto=format&fit=crop&q=80" alt="Kids Collection" class="onboarding-panel-bg" loading="lazy"/>
+        <div class="onboarding-panel-title">
+          <span class="panel-txt-main">KIDS</span>
+          <span class="panel-txt-sub">الأطفال</span>
+        </div>
+      </a>
+      <a href="pages/shop.html?dept=beauty" class="onboarding-panel" data-dept="beauty" title="Beauty Formulations - الجمال والعطور">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1000&auto=format&fit=crop&q=80" alt="Beauty Formulations" class="onboarding-panel-bg" loading="lazy"/>
+        <div class="onboarding-panel-title">
+          <span class="panel-txt-main">BEAUTY</span>
+          <span class="panel-txt-sub">الجمال والعطور</span>
+        </div>
+      </a>
+      <a href="pages/shop.html?dept=home" class="onboarding-panel" data-dept="home" title="Home Objects - المنزل والديكور">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1000&auto=format&fit=crop&q=80" alt="Home Objects" class="onboarding-panel-bg" loading="lazy"/>
+        <div class="onboarding-panel-title">
+          <span class="panel-txt-main">HOME</span>
+          <span class="panel-txt-sub">المنزل والديكور</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- 2. EDITORIAL HERO SECTION -->
+    <section class="hero-section" id="hero-section">
+      <!-- WebGL / Canvas Undulating Silk Fabric Effect -->
+      <div id="hero-webgl-container"></div>
+      <div class="hero-overlay-gradient"></div>
+
+      <!-- Slide 1 -->
+      <div class="hero-slide active">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1600&auto=format&fit=crop&q=85" alt="Kayan Autumn Capsule" class="hero-bg-img" loading="eager"/>
+        <div class="container" style="position:relative; z-index:3;">
+          <div class="hero-content">
+            <div class="hero-badge-pill" data-i18n="hero.badge">Atelier Series No. 07</div>
+            <h1 class="hero-title" data-i18n="hero.title">FORM MEETS EXISTENCE</h1>
+            <p class="hero-desc" data-i18n="hero.subtitle">
+              Architectural drape, tactile permanence, and refined silhouettes engineered for quiet distinction.
+            </p>
+            <div class="hero-cta-group">
+              <a href="pages/shop.html?dept=women" class="btn-hero-primary btn-magnetic" data-i18n="hero.cta_primary">Explore Autumn Capsule &rarr;</a>
+              <a href="pages/lookbook.html" class="btn-hero-secondary btn-magnetic" data-i18n="hero.cta_secondary">View Editorial Lookbook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1600&auto=format&fit=crop&q=85" alt="Kayan Homme Tailoring" class="hero-bg-img" loading="lazy"/>
+        <div class="container" style="position:relative; z-index:3;">
+          <div class="hero-content">
+            <div class="hero-badge-pill">Homme Tailoring</div>
+            <h2 class="hero-title">RIGOR IN PROPORTION</h2>
+            <p class="hero-desc">
+              Double-breasted camel overcoats and Okayama selvedge denim built to withstand generational wear.
+            </p>
+            <div class="hero-cta-group">
+              <a href="pages/shop.html?dept=men" class="btn-hero-primary btn-magnetic">Explore Men &rarr;</a>
+              <a href="pages/stores.html" class="btn-hero-secondary btn-magnetic">Book Private Fitting</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=1600&auto=format&fit=crop&q=85" alt="Kayan Botanical Alchimie" class="hero-bg-img" loading="lazy"/>
+        <div class="container" style="position:relative; z-index:3;">
+          <div class="hero-content">
+            <div class="hero-badge-pill">Kayan Alchimie</div>
+            <h2 class="hero-title">BOTANICAL ESSENCE</h2>
+            <p class="hero-desc">
+              Smoked Cambodian oud, Damascus rose hydrosols, and cellular sculpting treatments.
+            </p>
+            <div class="hero-cta-group">
+              <a href="pages/shop.html?dept=beauty" class="btn-hero-primary btn-magnetic">Discover Fragrance &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="hero-controls">
+        <span class="hero-dot active" data-slide="0"></span>
+        <span class="hero-dot" data-slide="1"></span>
+        <span class="hero-dot" data-slide="2"></span>
+      </div>
+    </section>
+
+    <!-- 3. INFINITE VELOCITY-REACTIVE MARQUEE STRIP -->
+    <section class="marquee-section" aria-label="Brand Philosophy">
+      <div class="marquee-track">
+        <div class="marquee-item">ARCHITECTURAL SILHOUETTES <span class="sep-dot"></span></div>
+        <div class="marquee-item">ETHICAL NOBLE FIBERS <span class="sep-dot"></span></div>
+        <div class="marquee-item">THE EQUINOX ARCHIVE <span class="sep-dot"></span></div>
+        <div class="marquee-item">QUIET DISTINCTION <span class="sep-dot"></span></div>
+        <div class="marquee-item">FORM MEETS EXISTENCE <span class="sep-dot"></span></div>
+        <div class="marquee-item">GLOBAL EXPRESS DELIVERY <span class="sep-dot"></span></div>
+        <div class="marquee-item">ARCHITECTURAL SILHOUETTES <span class="sep-dot"></span></div>
+        <div class="marquee-item">ETHICAL NOBLE FIBERS <span class="sep-dot"></span></div>
+        <div class="marquee-item">THE EQUINOX ARCHIVE <span class="sep-dot"></span></div>
+        <div class="marquee-item">QUIET DISTINCTION <span class="sep-dot"></span></div>
+      </div>
+    </section>
+
+    <!-- 4. TRENDING NOW CIRCLES / PILLS STRIP -->
+    <section class="section-py" id="trending-now-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="section.trending_now">Trending Now</span>
+          <h2 class="section-title">Curated Silhouettes in Focus</h2>
+          <p class="section-desc" data-i18n="section.trending_desc">
+            Fast-moving archival commissions and seasonal statements commanding attention globally.
+          </p>
+        </div>
+
+        <div class="trending-strip-wrap">
+          <div class="trending-pills-strip">
+            <a href="pages/shop.html?sub=women-new-in" class="trending-circle-card">
+              <div class="trending-circle-thumb">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=200&auto=format&fit=crop&q=80" alt="New In" loading="lazy"/>
+              </div>
+              <span class="trending-circle-label">New In</span>
+            </a>
+
+            <a href="pages/shop.html?sub=women-coords" class="trending-circle-card">
+              <div class="trending-circle-thumb">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=200&auto=format&fit=crop&q=80" alt="Coords" loading="lazy"/>
+              </div>
+              <span class="trending-circle-label">Coords</span>
+            </a>
+
+            <a href="pages/shop.html?sub=women-modest" class="trending-circle-card">
+              <div class="trending-circle-thumb">
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=200&auto=format&fit=crop&q=80" alt="Modest" loading="lazy"/>
+              </div>
+              <span class="trending-circle-label">Modest</span>
+            </a>
+
+            <a href="pages/shop.html?sub=women-workwear" class="trending-circle-card">
+              <div class="trending-circle-thumb">
+                <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=200&auto=format&fit=crop&q=80" alt="Workwear" loading="lazy"/>
+              </div>
+              <span class="trending-circle-label">Workwear</span>
+            </a>
+
+            <a href="pages/shop.html?sub=women-denim" class="trending-circle-card">
+              <div class="trending-circle-thumb">
+                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=200&auto=format&fit=crop&q=80" alt="Denim" loading="lazy"/>
+              </div>
+              <span class="trending-circle-label">Denim</span>
+            </a>
+
+            <a href="pages/shop.html?sub=women-neutrals" class="trending-circle-card">
+              <div class="trending-circle-thumb">
+                <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=200&auto=format&fit=crop&q=80" alt="Neutrals" loading="lazy"/>
+              </div>
+              <span class="trending-circle-label">Neutrals</span>
+            </a>
+
+            <a href="pages/shop.html?sub=women-coats" class="trending-circle-card">
+              <div class="trending-circle-thumb">
+                <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=200&auto=format&fit=crop&q=80" alt="Coats" loading="lazy"/>
+              </div>
+              <span class="trending-circle-label">Coats</span>
+            </a>
+
+            <a href="pages/shop.html?sub=women-sweaters" class="trending-circle-card">
+              <div class="trending-circle-thumb">
+                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=200&auto=format&fit=crop&q=80" alt="Cashmere" loading="lazy"/>
+              </div>
+              <span class="trending-circle-label">Cashmere</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.5 FEATURED ARCHIVE PRODUCTS (Direct 4-Col Grid) -->
+    <section class="section-py" id="featured-products-section" style="padding-block:64px; border-top:1px solid var(--color-border-subtle); border-bottom:1px solid var(--color-border-subtle); background:var(--color-surface);">
+      <div class="container">
+        <div class="section-header flex-row-header" style="align-items:flex-end; margin-bottom:36px;">
+          <div>
+            <span class="section-tag" data-i18n="section.featured_products">Featured Archive Silhouettes</span>
+            <h2 class="section-title" data-i18n="section.featured_heading">Iconic Masterpieces In Focus</h2>
+            <p class="section-desc" data-i18n="section.featured_desc">Direct from the design ateliers — curated noble fibers, sculptural tailoring, and permanent wardrobe anchors.</p>
+          </div>
+          <!-- Department Filter Tabs -->
+          <div class="featured-tabs" id="featured-dept-tabs" style="display:flex; flex-wrap:wrap; gap:8px;">
+            <button class="btn-tab-filter active" data-filter="all" data-i18n="dept.all" style="padding:8px 18px; border-radius:var(--radius-full); border:1px solid var(--color-border); background:var(--color-primary); color:var(--color-bg); font-weight:600; font-size:13px; cursor:pointer;">All Ateliers</button>
+            <button class="btn-tab-filter" data-filter="women" data-i18n="dept.women" style="padding:8px 18px; border-radius:var(--radius-full); border:1px solid var(--color-border); background:transparent; color:var(--color-text); font-weight:600; font-size:13px; cursor:pointer;">Women</button>
+            <button class="btn-tab-filter" data-filter="men" data-i18n="dept.men" style="padding:8px 18px; border-radius:var(--radius-full); border:1px solid var(--color-border); background:transparent; color:var(--color-text); font-weight:600; font-size:13px; cursor:pointer;">Men</button>
+            <button class="btn-tab-filter" data-filter="kids" data-i18n="dept.kids" style="padding:8px 18px; border-radius:var(--radius-full); border:1px solid var(--color-border); background:transparent; color:var(--color-text); font-weight:600; font-size:13px; cursor:pointer;">Kids</button>
+            <button class="btn-tab-filter" data-filter="beauty" data-i18n="dept.beauty" style="padding:8px 18px; border-radius:var(--radius-full); border:1px solid var(--color-border); background:transparent; color:var(--color-text); font-weight:600; font-size:13px; cursor:pointer;">Beauty</button>
+            <button class="btn-tab-filter" data-filter="home" data-i18n="dept.home" style="padding:8px 18px; border-radius:var(--radius-full); border:1px solid var(--color-border); background:transparent; color:var(--color-text); font-weight:600; font-size:13px; cursor:pointer;">Home & Living</button>
+          </div>
+        </div>
+
+        <!-- Featured Products Grid (Populated dynamically by home.js) -->
+        <div id="featured-products-grid" class="shop-grid cols-4" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:24px;">
+          <!-- Injected dynamically with interactive product cards -->
+        </div>
+
+        <div style="text-align:center; margin-top:40px;">
+          <a href="pages/shop.html" class="btn-submit-primary" style="display:inline-block; width:auto; padding:12px 36px; text-decoration:none;" data-i18n="nav.shop_all">
+            Explore Complete Archive &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SHOP BY DEPARTMENT BENTO GRID -->
+    <section class="section-py" id="bento-departments">
+      <div class="container">
+        <div class="section-header flex-row-header">
+          <div>
+            <span class="section-tag" data-i18n="section.departments">Shop by Department</span>
+            <h2 class="section-title" data-i18n="bento.five_ateliers">The Five Ateliers</h2>
+          </div>
+          <a href="pages/shop.html" class="header-btn" style="width:auto; padding:8px 16px; border-radius:var(--radius-full); background:var(--color-bg-secondary);" data-i18n="bento.view_all">
+            View All Silhouettes &rarr;
+          </a>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-card bento-item-lg tilt-card" data-tilt>
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1000&auto=format&fit=crop&q=80" alt="Women Atelier" class="bento-bg-img" loading="lazy"/>
+            <div class="bento-card-content">
+              <span class="bento-tag">Atelier No. 01</span>
+              <h3 class="bento-title" data-i18n="bento.women_title">Women's Sculptural Form</h3>
+              <p style="font-size:13px; opacity:0.85; max-width:420px;" data-i18n="bento.women_desc">Dresses, virgin wool outerwear, and fine cashmere tailoring.</p>
+              <a href="pages/shop.html?dept=women" class="btn-hero-primary" style="padding:10px 22px; width:fit-content; margin-top:8px;" data-i18n="bento.women_shop">Shop Women &rarr;</a>
+            </div>
+          </div>
+
+          <div class="bento-card bento-item-sm tilt-card" data-tilt>
+            <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=1000&auto=format&fit=crop&q=80" alt="Men Collection" class="bento-bg-img" loading="lazy"/>
+            <div class="bento-card-content">
+              <span class="bento-tag">Atelier No. 02</span>
+              <h3 class="bento-title" data-i18n="bento.men_title">Homme Tailoring</h3>
+              <a href="pages/shop.html?dept=men" class="btn-hero-secondary" style="padding:10px 22px; width:fit-content; margin-top:8px;" data-i18n="bento.men_shop">Shop Men &rarr;</a>
+            </div>
+          </div>
+
+          <div class="bento-card bento-item-mid tilt-card" data-tilt>
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80" alt="Beauty Formulations" class="bento-bg-img" loading="lazy"/>
+            <div class="bento-card-content">
+              <span class="bento-tag">Atelier No. 03</span>
+              <h3 class="bento-title" data-i18n="bento.beauty_title">Botanical Alchimie</h3>
+              <a href="pages/shop.html?dept=beauty" style="color:var(--brand-bronze-light); font-weight:700; font-size:12px;" data-i18n="bento.beauty_explore">Explore Beauty &rarr;</a>
+            </div>
+          </div>
+
+          <div class="bento-card bento-item-mid tilt-card" data-tilt>
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&auto=format&fit=crop&q=80" alt="Home and Living" class="bento-bg-img" loading="lazy"/>
+            <div class="bento-card-content">
+              <span class="bento-tag">Atelier No. 04</span>
+              <h3 class="bento-title" data-i18n="bento.home_title">Maison & Objects</h3>
+              <a href="pages/shop.html?dept=home" style="color:var(--brand-bronze-light); font-weight:700; font-size:12px;" data-i18n="bento.home_explore">Explore Living &rarr;</a>
+            </div>
+          </div>
+
+          <div class="bento-card bento-item-mid tilt-card" data-tilt>
+            <img src="https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=800&auto=format&fit=crop&q=80" alt="Kids Enfant" class="bento-bg-img" loading="lazy"/>
+            <div class="bento-card-content">
+              <span class="bento-tag">Atelier No. 05</span>
+              <h3 class="bento-title" data-i18n="bento.kids_title">Enfant Wardrobe</h3>
+              <a href="pages/shop.html?dept=kids" style="color:var(--brand-bronze-light); font-weight:700; font-size:12px;" data-i18n="bento.kids_explore">Explore Kids &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DEAL OF THE DAY / FLASH SALE WITH LIVE COUNTDOWN -->
+    <section class="section-py" id="flash-sale-section">
+      <div class="container">
+        <div class="flash-sale-box">
+          <div class="flash-sale-header">
+            <div>
+              <span class="section-tag" style="color:var(--brand-bronze-light);" data-i18n="section.flash_sale">The Equinox Flash Archive</span>
+              <h2 class="section-title" style="color:#FFF;">Mid-Season Archival Allocations</h2>
+              <p style="color:rgba(255,255,255,0.7); max-width:480px;" data-i18n="section.deal_urgency">
+                Limited pieces released from our seasonal vaults at exclusive archive privileges.
+              </p>
+            </div>
+
+            <!-- Live Countdown Timer -->
+            <div class="countdown-wrap" id="sale-countdown"></div>
+          </div>
+
+          <!-- Carousel Container -->
+          <div class="carousel-container" id="flash-sale-carousel">
+            <div class="carousel-track" id="flash-sale-track" style="display:flex; gap:20px;"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px;">
+              <div class="carousel-progress-bar" style="width:180px; height:2px; background:rgba(255,255,255,0.2); border-radius:999px; overflow:hidden;">
+                <div class="carousel-progress-fill" style="width:30%; height:100%; background:var(--color-accent);"></div>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <button class="carousel-prev header-btn" style="background:rgba(255,255,255,0.1); color:#FFF;" aria-label="Previous">&larr;</button>
+                <button class="carousel-next header-btn" style="background:rgba(255,255,255,0.1); color:#FFF;" aria-label="Next">&rarr;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. NEW ARRIVALS PRODUCT CAROUSEL -->
+    <section class="section-py" id="new-arrivals-section">
+      <div class="container">
+        <div class="section-header flex-row-header">
+          <div>
+            <span class="section-tag" data-i18n="section.new_arrivals">New Arrivals</span>
+            <h2 class="section-title">Fresh From The Ateliers</h2>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="carousel-prev header-btn" style="background:var(--color-bg-secondary);" aria-label="Previous">&larr;</button>
+            <button class="carousel-next header-btn" style="background:var(--color-bg-secondary);" aria-label="Next">&rarr;</button>
+          </div>
+        </div>
+
+        <div class="carousel-container" id="new-arrivals-carousel">
+          <div class="carousel-track" id="new-arrivals-track" style="display:flex; gap:24px;"></div>
+          <div style="margin-top:24px; display:flex; justify-content:center;">
+            <div class="carousel-progress-bar" style="width:220px; height:2px; background:var(--color-border); border-radius:999px; overflow:hidden;">
+              <div class="carousel-progress-fill" style="width:25%; height:100%; background:var(--color-primary);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. EDITORIAL PINNED SCROLL STORY SECTION WITH HOTSPOTS -->
+    <section class="section-py scroll-story-section" id="editorial-story-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="section.editorial_story">Curated Silhouettes</span>
+          <h2 class="section-title">The Autumn Study: Form & Drape</h2>
+        </div>
+
+        <div class="scroll-story-grid">
+          <!-- Left Text Details -->
+          <div class="scroll-story-text-pane">
+            <div style="display:flex; gap:8px; margin-bottom:16px;">
+              <button class="size-chip editorial-look-tab active" data-look="0">Look 01</button>
+              <button class="size-chip editorial-look-tab" data-look="1">Look 02</button>
+              <button class="size-chip editorial-look-tab" data-look="2">Look 03</button>
+            </div>
+            <h3 class="font-display font-bold text-2xl" id="editorial-story-title">Look 01: The Architectural Trench</h3>
+            <p class="text-base" id="editorial-story-desc">
+              Layered over pure cashmere knits and high-twist wool trousers. Designed for wind and metropolitan presence.
+            </p>
+            <div style="margin-top:16px;">
+              <a href="pages/lookbook.html" class="btn-submit-primary" style="width:fit-content; padding:12px 28px;">
+                Explore Lookbook Archive &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Media with Interactive Hotspot -->
+          <div class="scroll-story-media-pane">
+            <img id="editorial-story-img" src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=1000&auto=format&fit=crop&q=80" alt="Look 01 Editorial" class="scroll-story-img"/>
+            <div id="editorial-hotspot-mount"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. BUY MORE SAVE MORE PROMO BANNER -->
+    <section class="section-py">
+      <div class="container">
+        <div class="buy-more-banner">
+          <div>
+            <span class="section-tag" style="color:var(--brand-bronze-light);" data-i18n="section.buy_more_save_more">Volume Privileges</span>
+            <h2 class="font-display font-bold text-2xl" style="color:#FFF;">Build Your Wardrobe Archive</h2>
+            <p style="color:rgba(255,255,255,0.7); max-width:540px;" data-i18n="section.buy_more_desc">
+              Acquire 2 pieces for 20% off. Acquire 3 or more for 25% off automatically applied at checkout.
+            </p>
+          </div>
+
+          <div style="display:flex; gap:24px; flex-wrap:wrap;">
+            <div class="buy-more-tier">
+              <span class="buy-more-percent">20%</span>
+              <span style="font-size:12px; text-transform:uppercase; font-weight:700;">Buy 2 Pieces</span>
+            </div>
+            <div class="buy-more-tier">
+              <span class="buy-more-percent">25%</span>
+              <span style="font-size:12px; text-transform:uppercase; font-weight:700;">Buy 3+ Pieces</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. UGC SOCIAL GALLERY (#WearKayan) -->
+    <section class="section-py" id="ugc-gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="section.ugc_title">#WearKayan Community Gallery</span>
+          <h2 class="section-title">Living Silhouettes Worldwide</h2>
+          <p class="section-desc" data-i18n="section.ugc_desc">
+            Real silhouettes captured across Dubai, Paris, Tokyo, and London. Click any look to shop the tagged pieces.
+          </p>
+        </div>
+
+        <div class="ugc-masonry-grid" id="ugc-grid-mount"></div>
+      </div>
+    </section>
+
+    <!-- 11. THE KAYAN CIRCLE LOYALTY BANNER -->
+    <section class="section-py" id="loyalty-circle-section">
+      <div class="container">
+        <div class="loyalty-banner">
+          <div>
+            <span class="section-tag" style="color:var(--brand-bronze-light);" data-i18n="section.loyalty_title">The Kayan Circle</span>
+            <h2 class="font-display font-bold text-2xl" style="color:#FFF;">A Privilege of Quiet Belonging</h2>
+            <p style="color:rgba(255,255,255,0.75); line-height:1.6; margin-bottom:16px;" data-i18n="section.loyalty_desc">
+              An invitation to bespoke styling, private salon access, and unlisted archive drops. Members accumulate Tier Points with every acquisition.
+            </p>
+            <div style="display:flex; gap:16px; margin-bottom:24px; flex-wrap:wrap;">
+              <div>
+                <div style="font-weight:700; color:var(--brand-bronze-light);">Bronze &bull; Silver &bull; Gold &bull; Black</div>
+                <div style="font-size:12px; opacity:0.6;">4 Progressive Distinction Tiers</div>
+              </div>
+              <div>
+                <div style="font-weight:700; color:var(--brand-bronze-light);">Complimentary</div>
+                <div style="font-size:12px; opacity:0.6;">Valet & Global Courier</div>
+              </div>
+            </div>
+            <button class="btn-hero-primary btn-magnetic" id="btn-join-circle" data-i18n="section.loyalty_join">
+              Request Circle Access &rarr;
+            </button>
+          </div>
+
+          <!-- 3D Membership Card Mockup -->
+          <div class="loyalty-card-mockup tilt-card" data-tilt>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-family:var(--font-display); font-weight:700; letter-spacing:0.2em; font-size:14px;">K A Y A N</span>
+              <span style="font-size:11px; text-transform:uppercase; letter-spacing:0.15em; color:var(--brand-bronze-light); font-weight:700;">Black Edition</span>
+            </div>
+            <div style="font-family:monospace; font-size:16px; letter-spacing:0.2em; color:rgba(255,255,255,0.85);">
+              •••• &nbsp; •••• &nbsp; •••• &nbsp; 8921
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+              <div>
+                <div style="font-size:9px; text-transform:uppercase; opacity:0.6;">Collector</div>
+                <div style="font-size:12px; font-weight:600;">AMINA AL-MANSOOR</div>
+              </div>
+              <div style="font-size:11px; color:var(--brand-bronze-light); font-weight:700;">2,450 PTS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. BRAND STORY & VALUES WITH STAT COUNTERS -->
+    <section class="section-py-lg" style="background:var(--color-surface); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
+      <div class="container-reading text-center">
+        <span class="section-tag" data-i18n="section.brand_story_tag">The Kayan Ethos</span>
+        <h2 class="font-display font-bold text-2xl" style="margin-block:12px; line-height:1.25;">
+          "Form is not merely geometry; it is the physical manifestation of being."
+        </h2>
+        <p style="font-size:var(--text-md); line-height:1.7; color:var(--color-text-muted);">
+          Born between architectural rigor and Mediterranean light, KAYAN crafts modern-luxe silhouettes designed for movement, presence, and quiet distinction. We reject the ephemeral velocity of fast fashion in pursuit of tactile permanence, ethical provenance, and sculptural drape.
+        </p>
+
+        <!-- Stat Counters -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:24px; margin-top:40px;">
+          <div>
+            <div class="font-display font-bold text-2xl stat-number" data-target="12">0</div>
+            <div style="font-size:12px; text-transform:uppercase; color:var(--color-text-subtle); font-weight:700; margin-top:4px;">Global Flagships</div>
+          </div>
+          <div>
+            <div class="font-display font-bold text-2xl stat-number" data-target="83">0</div>
+            <div style="font-size:12px; text-transform:uppercase; color:var(--color-text-subtle); font-weight:700; margin-top:4px;">Curated Silhouettes</div>
+          </div>
+          <div>
+            <div class="font-display font-bold text-2xl stat-number" data-target="34">0</div>
+            <div style="font-size:12px; text-transform:uppercase; color:var(--color-text-subtle); font-weight:700; margin-top:4px;">Countries Delivered</div>
+          </div>
+          <div>
+            <div class="font-display font-bold text-2xl stat-number" data-target="98">0</div>
+            <div style="font-size:12px; text-transform:uppercase; color:var(--color-text-subtle); font-weight:700; margin-top:4px;">% Natural Fibers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. SERVICES STRIP -->
+    <section class="container">
+      <div class="services-strip-grid">
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div>
+            <div style="font-weight:700; font-size:13px;" data-i18n="section.services_shipping">Global Express Delivery</div>
+            <div style="font-size:11px; color:var(--color-text-muted);">Complimentary on orders > $150</div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          </div>
+          <div>
+            <div style="font-weight:700; font-size:13px;" data-i18n="section.services_returns">30-Day Atelier Returns</div>
+            <div style="font-size:11px; color:var(--color-text-muted);">Hassle-free complimentary pickup</div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div>
+            <div style="font-weight:700; font-size:13px;" data-i18n="section.services_secure">Encrypted Checkout</div>
+            <div style="font-size:11px; color:var(--color-text-muted);">256-bit bank grade security</div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <div style="font-weight:700; font-size:13px;" data-i18n="section.services_concierge">Private Concierge</div>
+            <div style="font-size:11px; color:var(--color-text-muted);">24/7 dedicated styling advice</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer Mount (Injected dynamically) -->
+  <div id="site-footer-mount"></div>
+
+  <!-- Application Bootstrap (Universal: works on file:/// and HTTP) -->
+  <script src="assets/js/kayan-bundle.js"></script>
+
+  <script>
+    // Bind join circle button to auth modal
+    document.addEventListener('DOMContentLoaded', () => {
+      const joinBtn = document.querySelector('#btn-join-circle');
+      if (joinBtn) {
+        joinBtn.addEventListener('click', () => {
+          if (window.events) window.events.emit('modal:auth:open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

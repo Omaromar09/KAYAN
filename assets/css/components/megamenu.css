@@ -1,0 +1,294 @@
+/* ==========================================================================
+   KAYAN LUXURY FASHION — MEGA MENU & MOBILE DRAWER
+   ========================================================================== */
+
+/* Mega Menu Container (Desktop) */
+.megamenu-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: opacity 0.3s var(--ease-out-quart),
+              transform 0.35s var(--ease-out-quart),
+              visibility 0.3s,
+              clip-path 0.4s var(--ease-out-expo);
+  z-index: var(--z-megamenu);
+  overflow: hidden;
+}
+
+.megamenu-panel.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.megamenu-inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-xl) var(--space-xl);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 320px;
+  gap: var(--space-xl);
+}
+
+.megamenu-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.megamenu-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+  padding-bottom: var(--space-2xs);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.megamenu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.megamenu-item-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 4px 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  transition: color var(--duration-fast), transform var(--duration-fast);
+  position: relative;
+}
+
+.megamenu-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) var(--ease-spring);
+}
+
+.megamenu-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.megamenu-item-link:hover {
+  color: var(--color-text);
+  transform: translateX(4px);
+}
+
+.megamenu-item-link:hover .megamenu-thumb {
+  transform: scale(1.15);
+}
+
+.megamenu-arrow {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity var(--duration-fast), transform var(--duration-fast);
+  color: var(--color-accent);
+  margin-inline-start: auto;
+}
+
+.megamenu-item-link:hover .megamenu-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Featured Editorial Card on Right */
+.megamenu-featured {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-md);
+  color: #FFFFFF;
+  min-height: 280px;
+}
+
+.megamenu-featured-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-quart);
+}
+
+.megamenu-featured:hover .megamenu-featured-img {
+  transform: scale(1.05);
+}
+
+.megamenu-featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.75) 100%);
+  pointer-events: none;
+}
+
+.megamenu-featured-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.megamenu-featured-tag {
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: var(--brand-bronze-light);
+}
+
+.megamenu-featured-title {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.megamenu-featured-btn {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   MOBILE OFF-CANVAS NAVIGATION DRAWER
+   ========================================================================== */
+.mobile-nav-drawer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  background: var(--color-surface);
+  z-index: var(--z-drawer);
+  transform: translateX(-100%);
+  transition: transform 0.4s var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.mobile-nav-drawer.active {
+  transform: translateX(0);
+}
+
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: calc(var(--z-drawer) - 1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-nav-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-nav-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-md);
+}
+
+.mobile-dept-tabs {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-2xs);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: var(--space-md);
+}
+
+.mobile-dept-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.mobile-dept-btn.active {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.mobile-nav-accordion-item {
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.mobile-accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-sm);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  background: none;
+  border: none;
+}
+
+.mobile-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s var(--ease-out-quart);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-inline-start: var(--space-sm);
+  padding-bottom: var(--space-xs);
+}
+
+.mobile-accordion-item.open .mobile-accordion-content {
+  max-height: 500px;
+}

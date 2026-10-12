@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture Test Suite & Automated Verification — KAYAN Atelier</title>
+  <meta name="description" content="In-browser unit tests and mathematical assertions for pricing, promotions, currency formatting, and fuzzy search." />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Core Design System & Tokens -->
+  <link rel="stylesheet" href="../assets/css/tokens.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/layout.css" />
+  <link rel="stylesheet" href="../assets/css/animations.css" />
+  <link rel="stylesheet" href="../assets/css/rtl.css" />
+
+  <!-- Components CSS -->
+  <link rel="stylesheet" href="../assets/css/components/header.css" />
+  <link rel="stylesheet" href="../assets/css/components/megamenu.css" />
+  <link rel="stylesheet" href="../assets/css/components/cart-drawer.css" />
+  <link rel="stylesheet" href="../assets/css/components/search.css" />
+  <link rel="stylesheet" href="../assets/css/components/product-card.css" />
+  <link rel="stylesheet" href="../assets/css/components/modals.css" />
+  <link rel="stylesheet" href="../assets/css/components/toasts.css" />
+  <link rel="stylesheet" href="../assets/css/components/cursor.css" />
+  <link rel="stylesheet" href="../assets/css/components/footer.css" />
+
+  <style>
+    .test-dashboard-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: var(--space-xl);
+    }
+    .test-stat-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+    }
+    .test-stat-num {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-top: 4px;
+    }
+    .test-group-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .test-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: 10px;
+      border-bottom: 1px solid var(--color-border-subtle);
+      font-size: 13px;
+    }
+    .test-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .test-badge.pass {
+      background: rgba(34, 197, 94, 0.12);
+      color: #15803d;
+    }
+    .test-badge.fail {
+      background: rgba(239, 68, 68, 0.12);
+      color: #b91c1c;
+    }
+  </style>
+
+  <!-- CDNs: GSAP 3 & Lenis for silky smooth 60fps animations -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.45/dist/lenis.min.js"></script>
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Tactile Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Page Transition Curtain -->
+  <div class="transition-curtain">
+    <div class="curtain-logo">K A Y A N</div>
+  </div>
+
+  <!-- Global Header Mount -->
+  <div id="site-header-mount"></div>
+
+  <!-- MAIN TEST RUNNER CONTENT -->
+  <main id="main-content">
+    <div class="container" style="max-width:1000px; padding-block:var(--space-xl) var(--space-2xl);">
+      
+      <!-- Breadcrumbs -->
+      <nav class="shop-breadcrumbs" aria-label="Breadcrumb Navigation" style="margin-bottom:16px;">
+        <a href="../index.html">Atelier</a>
+        <span>/</span>
+        <span style="color:var(--color-text);">Verification Engine</span>
+      </nav>
+
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:28px;">
+        <div>
+          <span class="pdp-brand-tag">Autonomous Assurance Suite</span>
+          <h1 class="font-display font-bold text-3xl" style="margin-block:4px 6px;">Atelier Mathematical & Logic Verifier</h1>
+          <p class="text-sm" style="color:var(--color-text-muted); max-width:580px;">
+            In-browser visual assertion runner validating promotions, cart calculations, Levenshtein fuzzy search, multi-currency conversion, and state synchronizations.
+          </p>
+        </div>
+        <div>
+          <button id="btn-rerun-tests" class="btn-submit-primary" style="display:inline-flex; width:auto; padding:10px 24px; font-size:12px;">
+            Re-Execute Verification Suite &circlearrowright;
+          </button>
+        </div>
+      </div>
+
+      <!-- Dashboard KPI Summary Cards -->
+      <div class="test-dashboard-stats">
+        <div class="test-stat-card">
+          <div style="font-size:11px; text-transform:uppercase; color:var(--color-text-muted); font-weight:700;">Total Assertions</div>
+          <div id="stat-total-tests" class="test-stat-num">0</div>
+        </div>
+        <div class="test-stat-card">
+          <div style="font-size:11px; text-transform:uppercase; color:#15803d; font-weight:700;">Passed Verification</div>
+          <div id="stat-passed-tests" class="test-stat-num" style="color:#15803d;">0</div>
+        </div>
+        <div class="test-stat-card">
+          <div style="font-size:11px; text-transform:uppercase; color:#b91c1c; font-weight:700;">Failed Anomalies</div>
+          <div id="stat-failed-tests" class="test-stat-num" style="color:#b91c1c;">0</div>
+        </div>
+        <div class="test-stat-card">
+          <div style="font-size:11px; text-transform:uppercase; color:var(--color-accent); font-weight:700;">Execution Latency</div>
+          <div id="stat-duration" class="test-stat-num" style="color:var(--color-accent); font-size:24px;">0ms</div>
+        </div>
+      </div>
+
+      <!-- Tests Mount Container -->
+      <div id="tests-output-mount"></div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer Mount -->
+  <div id="site-footer-mount"></div>
+
+  <!-- Application Bootstrap (Universal: works on file:/// and HTTP) -->
+  <script src="../assets/js/kayan-bundle.js"></script>
+
+  <!-- Test Suite Module -->
+  <script>
+    const {
+      calculateCartTotals,
+      calculateVolumeDiscount,
+      evaluatePromoCode,
+      convertCurrency,
+      FREE_SHIPPING_THRESHOLD_USD,
+      fuzzyMatch,
+      debounce,
+      store,
+      i18n,
+      products
+    } = window.KAYAN;
+
+    class TestSuiteRunner {
+      constructor() {
+        this.tests = [];
+        this.passed = 0;
+        this.failed = 0;
+      }
+
+      add(group, name, testFn) {
+        this.tests.push({ group, name, testFn });
+      }
+
+      run() {
+        const startTime = performance.now();
+        this.passed = 0;
+        this.failed = 0;
+        const resultsByGroup = {};
+
+        this.tests.forEach(t => {
+          let pass = false;
+          let error = null;
+          try {
+            t.testFn();
+            pass = true;
+            this.passed++;
+          } catch (e) {
+            pass = false;
+            error = e.message || String(e);
+            this.failed++;
+          }
+
+          if (!resultsByGroup[t.group]) resultsByGroup[t.group] = [];
+          resultsByGroup[t.group].push({ name: t.name, pass, error });
+        });
+
+        const duration = Math.round(performance.now() - startTime);
+        this.renderUI(resultsByGroup, duration);
+      }
+
+      renderUI(groups, duration) {
+        document.getElementById('stat-total-tests').textContent = this.tests.length;
+        document.getElementById('stat-passed-tests').textContent = this.passed;
+        document.getElementById('stat-failed-tests').textContent = this.failed;
+        document.getElementById('stat-duration').textContent = `${duration}ms`;
+
+        const mount = document.getElementById('tests-output-mount');
+        mount.innerHTML = Object.entries(groups).map(([groupName, tests]) => `
+          <div class="test-group-card">
+            <h3 class="font-display font-bold text-lg" style="margin-bottom:14px; border-bottom:1px solid var(--color-border); padding-bottom:10px;">
+              ${groupName} (${tests.filter(t => t.pass).length}/${tests.length} Verified)
+            </h3>
+            <div>
+              ${tests.map(t => `
+                <div class="test-row">
+                  <div>
+                    <strong>${t.name}</strong>
+                    ${t.error ? `<div style="font-size:11px; color:#b91c1c; margin-top:2px; font-family:monospace;">${t.error}</div>` : ''}
+                  </div>
+                  <span class="test-badge ${t.pass ? 'pass' : 'fail'}">
+                    ${t.pass ? '&#10003; PASS' : '&#10007; FAIL'}
+                  </span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function assert(condition, message) {
+      if (!condition) throw new Error(message || 'Assertion failed');
+    }
+
+    function assertEquals(actual, expected, message) {
+      if (actual !== expected) {
+        throw new Error(`${message || 'Assertion failed'}: Expected [${expected}], got [${actual}]`);
+      }
+    }
+
+    function setupTestSuite() {
+      const runner = new TestSuiteRunner();
+
+      // --- GROUP 1: VOLUME DISCOUNTS ---
+      runner.add('Equinox Volume Discounts', '1 item receives 0% volume discount', () => {
+        const res = calculateVolumeDiscount([{ price: 100, quantity: 1 }]);
+        assertEquals(res.rate, 0, 'Rate should be 0');
+        assertEquals(res.amountUSD, 0, 'Amount should be 0');
+      });
+
+      runner.add('Equinox Volume Discounts', '2 items trigger 20% volume discount', () => {
+        const res = calculateVolumeDiscount([
+          { price: 100, quantity: 1 },
+          { price: 200, quantity: 1 }
+        ]);
+        assertEquals(res.rate, 0.20, 'Rate should be 0.20');
+        assertEquals(res.amountUSD, 60, '20% of $300 should be $60');
+      });
+
+      runner.add('Equinox Volume Discounts', '3+ items trigger 25% volume discount', () => {
+        const res = calculateVolumeDiscount([
+          { price: 100, quantity: 1 },
+          { price: 200, quantity: 1 },
+          { price: 100, quantity: 1 }
+        ]);
+        assertEquals(res.rate, 0.25, 'Rate should be 0.25');
+        assertEquals(res.amountUSD, 100, '25% of $400 should be $100');
+      });
+
+      runner.add('Equinox Volume Discounts', 'Multi-quantity item counts toward tier threshold (qty 3)', () => {
+        const res = calculateVolumeDiscount([{ price: 50, quantity: 3 }]);
+        assertEquals(res.rate, 0.25, 'Quantity 3 should trigger 25% discount');
+        assertEquals(res.amountUSD, 37.5, '25% of $150 should be $37.5');
+      });
+
+      // --- GROUP 2: PROMO CODE ENGINE ---
+      runner.add('Privilege Promo Codes', 'KAYAN15 grants 15% discount', () => {
+        const res = evaluatePromoCode('KAYAN15', 200);
+        assert(res.valid, 'Code must be valid');
+        assertEquals(res.discountUSD, 30, '15% of $200 should be $30');
+      });
+
+      runner.add('Privilege Promo Codes', 'Code evaluation is case insensitive (kayan15)', () => {
+        const res = evaluatePromoCode('kayan15', 100);
+        assert(res.valid, 'Lower-case code must be accepted');
+        assertEquals(res.discountUSD, 15, 'Discount should match');
+      });
+
+      runner.add('Privilege Promo Codes', 'CIRCLE20 requires minimum order of $100', () => {
+        const fail = evaluatePromoCode('CIRCLE20', 50);
+        assert(!fail.valid, 'Order below $100 should fail');
+        const pass = evaluatePromoCode('CIRCLE20', 120);
+        assert(pass.valid, 'Order above $100 should pass');
+        assertEquals(pass.discountUSD, 24, '20% of $120 should be $24');
+      });
+
+      runner.add('Privilege Promo Codes', 'FREESHIP grants free shipping privilege', () => {
+        const res = evaluatePromoCode('FREESHIP', 80);
+        assert(res.valid, 'FREESHIP must be valid');
+        assert(res.freeShipping, 'freeShipping flag must be true');
+      });
+
+      runner.add('Privilege Promo Codes', 'Invalid code returns graceful error result', () => {
+        const res = evaluatePromoCode('UNKNOWN_CODE_99', 200);
+        assert(!res.valid, 'Invalid code must report valid: false');
+        assert(res.message.length > 0, 'Must provide human message');
+      });
+
+      // --- GROUP 3: FREE SHIPPING & FINANCIALS ---
+      runner.add('Free Shipping Thresholds', 'Subtotal < $150 incurs standard delivery ($15)', () => {
+        const totals = calculateCartTotals([{ price: 100, quantity: 1 }]);
+        assertEquals(totals.shippingFee, 15, 'Shipping fee must be $15');
+        assert(totals.freeShippingProgress < 100, 'Progress must be under 100%');
+        assertEquals(totals.freeShippingRemaining, 50, 'Remaining must be $50');
+      });
+
+      runner.add('Free Shipping Thresholds', 'Subtotal >= $150 unlocks complimentary delivery ($0)', () => {
+        const totals = calculateCartTotals([{ price: 160, quantity: 1 }]);
+        assertEquals(totals.shippingFee, 0, 'Shipping fee must be 0');
+        assertEquals(totals.freeShippingProgress, 100, 'Progress should be 100%');
+        assertEquals(totals.freeShippingRemaining, 0, 'Remaining should be $0');
+      });
+
+      runner.add('Free Shipping Thresholds', 'Combined volume discount + final total correctly computed', () => {
+        // 2 items at $100 = $200 subtotal -> 20% discount ($40) -> $160 net -> free shipping -> total $160
+        const totals = calculateCartTotals([
+          { price: 100, quantity: 1 },
+          { price: 100, quantity: 1 }
+        ]);
+        assertEquals(totals.volumeDiscount.amount, 40, 'Volume discount should be $40');
+        assertEquals(totals.finalTotal, 160, 'Final total should be $160');
+      });
+
+      // --- GROUP 4: CURRENCY ENGINE ---
+      runner.add('Multi-Currency Conversions', 'USD to AED conversion uses 3.67 peg rate', () => {
+        const converted = convertCurrency(100, 'AED');
+        assertEquals(converted, 367, '100 USD should convert to 367 AED');
+      });
+
+      runner.add('Multi-Currency Conversions', 'USD to EUR conversion uses current rate', () => {
+        const converted = convertCurrency(100, 'EUR');
+        assertEquals(converted, 92, '100 USD should convert to 92 EUR');
+      });
+
+      runner.add('Multi-Currency Conversions', 'i18n.formatPrice formats target currency symbol cleanly', () => {
+        const str = i18n.formatPrice(100, 'USD');
+        assert(str.includes('100'), 'Formatted string must include amount');
+      });
+
+      // --- GROUP 5: FUZZY SEARCH & TOKENIZATION ---
+      runner.add('Fuzzy Search Engine', 'Exact query matches product name', () => {
+        const p = products[0];
+        const match = fuzzyMatch('Wool', p.name);
+        assert(match, 'Wool should match Sculpted Wool Cocoon Coat');
+      });
+
+      runner.add('Fuzzy Search Engine', 'Typo tolerance: Levenshtein distance handles minor misspellings', () => {
+        const match = fuzzyMatch('cocon', 'cocoon');
+        assert(match, 'Typo "cocon" should match "cocoon"');
+      });
+
+      runner.add('Fuzzy Search Engine', 'Empty query matches all items safely', () => {
+        const match = fuzzyMatch('', 'Any Product Name');
+        assert(match, 'Empty query must safely match');
+      });
+
+      runner.add('Fuzzy Search Engine', 'Department filter contains exact 5 departments', () => {
+        const depts = new Set(products.map(p => p.department));
+        assert(depts.has('women'), 'Must have women');
+        assert(depts.has('men'), 'Must have men');
+        assert(depts.has('kids'), 'Must have kids');
+        assert(depts.has('beauty'), 'Must have beauty');
+        assert(depts.has('home'), 'Must have home');
+        assertEquals(depts.size, 5, 'Exactly 5 departments required');
+      });
+
+      runner.add('Product Catalog Rigor', 'Exactly 83 products cataloged with valid images', () => {
+        assertEquals(products.length, 83, 'Product count must be exactly 83');
+        const brokenImages = products.filter(p => !p.images || p.images.length === 0);
+        assertEquals(brokenImages.length, 0, 'Every product must have images');
+      });
+
+      return runner;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const runner = setupTestSuite();
+      runner.run();
+
+      document.getElementById('btn-rerun-tests')?.addEventListener('click', () => {
+        runner.run();
+      });
+    });
+  </script>
+</body>
+</html>

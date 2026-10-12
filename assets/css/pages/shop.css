@@ -1,0 +1,237 @@
+/* ==========================================================================
+   KAYAN LUXURY FASHION — SHOP (PLP) PAGE STYLES
+   ========================================================================== */
+
+.shop-page-header {
+  padding-block: var(--space-xl) var(--space-lg);
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.shop-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-subtle);
+  margin-bottom: var(--space-xs);
+}
+
+.shop-breadcrumbs a:hover {
+  color: var(--color-accent);
+}
+
+.shop-main-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  padding-block: var(--space-xl);
+}
+
+@media (min-width: 1024px) {
+  .shop-main-layout {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+/* Sticky Filter Sidebar */
+.shop-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 1024px) {
+  .shop-sidebar {
+    position: sticky;
+    top: calc(var(--header-height) + 24px);
+    height: fit-content;
+    max-height: calc(100vh - var(--header-height) - 48px);
+    overflow-y: auto;
+    padding-inline-end: var(--space-xs);
+  }
+}
+
+.filter-group {
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: var(--space-md);
+}
+
+.filter-group-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filter-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color var(--duration-fast);
+}
+
+.filter-checkbox-label:hover {
+  color: var(--color-text);
+}
+
+.filter-checkbox-custom {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-fast);
+}
+
+input[type="checkbox"]:checked + .filter-checkbox-custom {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+/* Dual Range Price Slider */
+.price-slider-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.price-range-inputs {
+  position: relative;
+  height: 20px;
+}
+
+.price-range-inputs input[type="range"] {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  appearance: none;
+  background: none;
+}
+
+.price-range-inputs input[type="range"]::-webkit-slider-thumb {
+  pointer-events: auto;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Toolbar & View Toggles */
+.shop-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .shop-toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.shop-active-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.active-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-secondary);
+  font-size: var(--text-2xs);
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+}
+
+.active-filter-chip button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-subtle);
+}
+
+.view-toggle-btns {
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (min-width: 1024px) {
+  .view-toggle-btns {
+    display: flex;
+  }
+}
+
+.view-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-subtle);
+}
+
+.view-btn.active {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  border-color: var(--color-primary);
+}
+
+/* Products Grid Layouts */
+.shop-grid {
+  display: grid;
+  gap: var(--space-md);
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.shop-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.shop-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.shop-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 1024px) {
+  .shop-grid.cols-3, .shop-grid.cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .shop-grid.cols-2, .shop-grid.cols-3, .shop-grid.cols-4 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

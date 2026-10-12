@@ -1,0 +1,171 @@
+/* ==========================================================================
+   KAYAN LUXURY FASHION — DESIGN SYSTEM TOKENS
+   ========================================================================== */
+
+:root {
+  /* --- Brand Primitives --- */
+  --brand-raw-alabaster: #FAF9F5;
+  --brand-bone-muted: #F1EFEA;
+  --brand-surface-white: #FFFFFF;
+  --brand-obsidian-ink: #111113;
+  --brand-obsidian-soft: #1E1E22;
+  --brand-terracotta-gold: #C98A4C;
+  --brand-bronze-light: #D4A373;
+  --brand-warm-stone: #E5E2DC;
+
+  /* --- Light Theme (Default) --- */
+  --color-bg: var(--brand-raw-alabaster);
+  --color-bg-secondary: var(--brand-bone-muted);
+  --color-surface: var(--brand-surface-white);
+  --color-surface-hover: #F8F7F4;
+  --color-surface-glass: rgba(255, 255, 255, 0.82);
+  --color-surface-elevated: #FFFFFF;
+
+  --color-text: var(--brand-obsidian-ink);
+  --color-text-muted: #64625D;
+  --color-text-subtle: #98948C;
+  --color-text-inverse: var(--brand-raw-alabaster);
+
+  --color-border: var(--brand-warm-stone);
+  --color-border-subtle: #EEECE7;
+  --color-border-strong: #BCB8B0;
+
+  --color-primary: var(--brand-obsidian-ink);
+  --color-primary-hover: #26262B;
+  --color-primary-contrast: var(--brand-raw-alabaster);
+
+  --color-accent: var(--brand-terracotta-gold);
+  --color-accent-hover: #B2773B;
+  --color-accent-subtle: rgba(201, 138, 76, 0.12);
+  --color-accent-contrast: #FFFFFF;
+
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-sale: #DC2626;
+  --color-sale-subtle: rgba(220, 38, 38, 0.1);
+
+  /* --- Shadows --- */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 12px 28px -6px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 48px -8px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 32px 64px -12px rgba(0, 0, 0, 0.18);
+  --shadow-accent: 0 8px 24px rgba(201, 138, 76, 0.25);
+
+  /* --- Typography --- */
+  --font-display: 'Syne', 'Playfair Display', Georgia, serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-arabic: 'Tajawal', 'Cairo', system-ui, sans-serif;
+
+  /* Fluid Type Scale */
+  --text-2xs: clamp(0.65rem, 0.62rem + 0.15vw, 0.72rem);
+  --text-xs: clamp(0.75rem, 0.72rem + 0.2vw, 0.85rem);
+  --text-sm: clamp(0.85rem, 0.82rem + 0.25vw, 0.95rem);
+  --text-base: clamp(0.95rem, 0.92rem + 0.3vw, 1.05rem);
+  --text-md: clamp(1.1rem, 1.05rem + 0.4vw, 1.25rem);
+  --text-lg: clamp(1.25rem, 1.18rem + 0.6vw, 1.55rem);
+  --text-xl: clamp(1.55rem, 1.45rem + 0.9vw, 2.1rem);
+  --text-2xl: clamp(2rem, 1.75rem + 1.4vw, 2.9rem);
+  --text-3xl: clamp(2.6rem, 2.2rem + 2.2vw, 4.2rem);
+  --text-hero: clamp(3.2rem, 2.6rem + 4.2vw, 6.8rem);
+
+  /* --- Spacing System --- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 6.5rem;
+  --space-4xl: 9rem;
+
+  /* Container & Layout */
+  --container-max: 1560px;
+  --container-narrow: 1200px;
+  --container-reading: 840px;
+  --header-height: 80px;
+  --announcement-height: 40px;
+
+  /* Radius */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Transitions & Motion Curves */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --duration-fast: 180ms;
+  --duration-normal: 320ms;
+  --duration-medium: 500ms;
+  --duration-slow: 850ms;
+  --duration-deliberate: 1200ms;
+
+  /* Z-Index Hierarchy */
+  --z-negative: -1;
+  --z-base: 1;
+  --z-sticky: 50;
+  --z-header: 100;
+  --z-megamenu: 110;
+  --z-floating-bar: 150;
+  --z-drawer: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-cursor: 999;
+  --z-preloader: 1000;
+  --z-transition-wipe: 1100;
+}
+
+/* --- Dark Theme Overrides --- */
+[data-theme="dark"] {
+  --color-bg: #0A0A0C;
+  --color-bg-secondary: #121216;
+  --color-surface: #18181D;
+  --color-surface-hover: #222229;
+  --color-surface-glass: rgba(24, 24, 29, 0.85);
+  --color-surface-elevated: #202026;
+
+  --color-text: #F6F4F0;
+  --color-text-muted: #9E9B93;
+  --color-text-subtle: #68655E;
+  --color-text-inverse: #0A0A0C;
+
+  --color-border: #282830;
+  --color-border-subtle: #1C1C22;
+  --color-border-strong: #3D3D48;
+
+  --color-primary: #F6F4F0;
+  --color-primary-hover: #E3E0D8;
+  --color-primary-contrast: #0A0A0C;
+
+  --color-accent: var(--brand-bronze-light);
+  --color-accent-hover: #E2B384;
+  --color-accent-subtle: rgba(212, 163, 115, 0.16);
+  --color-accent-contrast: #0A0A0C;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.65);
+  --shadow-xl: 0 32px 70px rgba(0, 0, 0, 0.75);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,98 @@
+/* ==========================================================================
+   KAYAN LUXURY FASHION — RTL (ARABIC) STYLES
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-arabic), system-ui, sans-serif;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] .font-display,
+[dir="rtl"] .logo-wordmark {
+  letter-spacing: 0 !important;
+}
+
+/* Icon Flips for RTL */
+[dir="rtl"] .icon-flip-rtl,
+[dir="rtl"] .arrow-icon,
+[dir="rtl"] .btn-arrow svg,
+[dir="rtl"] .breadcrumb-separator svg {
+  transform: scaleX(-1);
+}
+
+/* Drawer Transitions in RTL */
+[dir="rtl"] .cart-drawer {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .cart-drawer.active {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .mobile-nav-drawer {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .mobile-nav-drawer.active {
+  transform: translateX(0);
+}
+
+/* Float / Absolute Overrides for Badges & Modals */
+[dir="rtl"] .product-badge-stack {
+  left: auto;
+  right: var(--space-xs);
+}
+
+[dir="rtl"] .product-wishlist-btn {
+  right: auto;
+  left: var(--space-xs);
+}
+
+/* Search Shortcut Key hint */
+[dir="rtl"] .search-kbd {
+  font-family: monospace;
+  direction: ltr;
+}
+
+/* Swiper / Marquee */
+[dir="rtl"] .marquee-track {
+  animation-name: marqueeRight;
+}
+
+[dir="rtl"] .marquee-track.reverse {
+  animation-name: marqueeLeft;
+}
+
+/* Onboarding Panels Typography in RTL */
+[dir="rtl"] .onboarding-panel-title .panel-txt-main {
+  display: none;
+}
+
+[dir="rtl"] .onboarding-panel-title .panel-txt-sub {
+  display: block;
+  font-family: var(--font-arabic), 'Cairo', sans-serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+
+/* Featured Tabs in RTL */
+[dir="rtl"] .featured-tabs {
+  direction: rtl;
+}
+

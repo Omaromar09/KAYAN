@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Flagship Ateliers & Salons — KAYAN Atelier</title>
+  <meta name="description" content="Discover KAYAN flagships in Dubai, Riyadh, London, Paris, Milan, New York, Tokyo, and Cairo. Reserve private salon styling appointments." />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Core Design System & Tokens -->
+  <link rel="stylesheet" href="../assets/css/tokens.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/layout.css" />
+  <link rel="stylesheet" href="../assets/css/animations.css" />
+  <link rel="stylesheet" href="../assets/css/rtl.css" />
+
+  <!-- Components CSS -->
+  <link rel="stylesheet" href="../assets/css/components/header.css" />
+  <link rel="stylesheet" href="../assets/css/components/megamenu.css" />
+  <link rel="stylesheet" href="../assets/css/components/cart-drawer.css" />
+  <link rel="stylesheet" href="../assets/css/components/search.css" />
+  <link rel="stylesheet" href="../assets/css/components/product-card.css" />
+  <link rel="stylesheet" href="../assets/css/components/modals.css" />
+  <link rel="stylesheet" href="../assets/css/components/toasts.css" />
+  <link rel="stylesheet" href="../assets/css/components/cursor.css" />
+  <link rel="stylesheet" href="../assets/css/components/footer.css" />
+
+  <!-- Stores Specific CSS -->
+  <link rel="stylesheet" href="../assets/css/pages/stores.css" />
+
+  <!-- CDNs: GSAP 3 & Lenis for silky smooth 60fps animations -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.45/dist/lenis.min.js"></script>
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Tactile Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Page Transition Curtain -->
+  <div class="transition-curtain">
+    <div class="curtain-logo">K A Y A N</div>
+  </div>
+
+  <!-- Global Header Mount -->
+  <div id="site-header-mount"></div>
+
+  <!-- MAIN STORES CONTENT -->
+  <main id="main-content">
+    <div class="container stores-page-wrap">
+      
+      <!-- Breadcrumbs -->
+      <nav class="shop-breadcrumbs" aria-label="Breadcrumb Navigation" style="margin-bottom:16px;">
+        <a href="../index.html">Atelier</a>
+        <span>/</span>
+        <span style="color:var(--color-text);">Global Flagships</span>
+      </nav>
+
+      <div style="margin-bottom:24px;">
+        <h1 class="font-display font-bold text-3xl">Flagship Ateliers & Private Salons</h1>
+        <p class="text-sm" style="color:var(--color-text-muted); margin-top:4px;">
+          Experience tactile noble fabrics, made-to-measure tailoring, and personal curation across our global locations.
+        </p>
+      </div>
+
+      <!-- Main Two-Column Stores Layout -->
+      <div class="stores-layout-grid">
+        
+        <!-- Left Column: Search, Filters & Stores List -->
+        <div>
+          <!-- Search & Region Filters -->
+          <div class="stores-filter-box">
+            <input type="text" id="store-search-input" class="stores-search-input" placeholder="Search by city, country, or avenue (e.g. Dubai, Bond St)..." />
+            <div class="stores-region-pills">
+              <button class="stores-region-pill active" data-region="all">All Flagships</button>
+              <button class="stores-region-pill" data-region="me">Middle East</button>
+              <button class="stores-region-pill" data-region="eu">Europe</button>
+              <button class="stores-region-pill" data-region="na">Americas</button>
+              <button class="stores-region-pill" data-region="asia">Asia</button>
+            </div>
+          </div>
+
+          <div id="stores-count-label" style="font-size:12px; font-weight:700; color:var(--color-text-muted); margin-bottom:12px;"></div>
+
+          <!-- Stores List Mount -->
+          <div id="stores-list-mount" class="stores-list-column"></div>
+        </div>
+
+        <!-- Right Column: Interactive Map & Selected Details -->
+        <aside class="stores-map-column">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <h3 class="font-display font-bold text-base">Atelier Global Geographies</h3>
+            <span style="font-size:11px; color:var(--color-accent); font-weight:700;">12 International Hubs</span>
+          </div>
+
+          <div id="stores-map-mount" style="flex-grow:1; display:flex; align-items:center; justify-content:center;"></div>
+
+          <div id="selected-store-preview"></div>
+        </aside>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer Mount -->
+  <div id="site-footer-mount"></div>
+
+  <!-- Application Bootstrap (Universal: works on file:/// and HTTP) -->
+  <script src="../assets/js/kayan-bundle.js"></script>
+</body>
+</html>
