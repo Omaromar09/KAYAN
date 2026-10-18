@@ -131,7 +131,7 @@
               </div>
               <div style="display:flex; justify-content:space-between; align-items:baseline;">
                 <span style="font-family:monospace; font-size:11px; opacity:0.75; letter-spacing:0.1em;">KYN-GIFT-9941</span>
-                <span id="preview-amount" style="font-family:var(--font-display); font-size:26px; font-weight:800;">$250</span>
+                <span id="preview-amount" style="font-family:var(--font-display); font-size:24px; font-weight:800;">2,500 ج.م</span>
               </div>
             </div>
           </div>
@@ -142,11 +142,11 @@
 
         <!-- Customizer Form -->
         <div class="checkout-form-card" style="margin-bottom:0;">
-          <h2>Configure Gift Card</h2>
+          <h2>Configure Gift Card / تخصيص بطاقة الهدية</h2>
 
           <!-- Design Style Selector -->
           <div class="form-group" style="margin-bottom:16px;">
-            <label class="form-label">Select Atelier Card Skin</label>
+            <label class="form-label">Select Atelier Card Skin / مظهر البطاقة</label>
             <div style="display:flex; gap:8px;">
               <button class="gift-skin-btn active" data-skin="obsidian" style="flex:1; padding:10px; border:1px solid var(--color-border); border-radius:4px; font-size:11px; font-weight:700; background:#111; color:#fff; cursor:pointer;">Obsidian</button>
               <button class="gift-skin-btn" data-skin="alabaster" style="flex:1; padding:10px; border:1px solid var(--color-border); border-radius:4px; font-size:11px; font-weight:700; background:#FAF9F5; color:#111; cursor:pointer;">Alabaster</button>
@@ -156,12 +156,12 @@
 
           <!-- Denomination Selector -->
           <div class="form-group" style="margin-bottom:16px;">
-            <label class="form-label">Select Amount</label>
+            <label class="form-label">Select Amount / اختر القيمة</label>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              <button class="gift-amt-btn" data-amount="100" style="flex:1; min-width:60px; padding:10px; border:1px solid var(--color-border); border-radius:4px; font-size:12px; font-weight:700; background:var(--color-surface); cursor:pointer;">$100</button>
-              <button class="gift-amt-btn active" data-amount="250" style="flex:1; min-width:60px; padding:10px; border:1px solid var(--color-primary); border-radius:4px; font-size:12px; font-weight:700; background:var(--color-primary); color:var(--color-bg); cursor:pointer;">$250</button>
-              <button class="gift-amt-btn" data-amount="500" style="flex:1; min-width:60px; padding:10px; border:1px solid var(--color-border); border-radius:4px; font-size:12px; font-weight:700; background:var(--color-surface); cursor:pointer;">$500</button>
-              <button class="gift-amt-btn" data-amount="1000" style="flex:1; min-width:60px; padding:10px; border:1px solid var(--color-border); border-radius:4px; font-size:12px; font-weight:700; background:var(--color-surface); cursor:pointer;">$1,000</button>
+              <button class="gift-amt-btn" data-amount="20" style="flex:1; min-width:70px; padding:10px; border:1px solid var(--color-border); border-radius:4px; font-size:12px; font-weight:700; background:var(--color-surface); cursor:pointer;">1,000 ج.م</button>
+              <button class="gift-amt-btn active" data-amount="50" style="flex:1; min-width:70px; padding:10px; border:1px solid var(--color-primary); border-radius:4px; font-size:12px; font-weight:700; background:var(--color-primary); color:var(--color-bg); cursor:pointer;">2,500 ج.م</button>
+              <button class="gift-amt-btn" data-amount="100" style="flex:1; min-width:70px; padding:10px; border:1px solid var(--color-border); border-radius:4px; font-size:12px; font-weight:700; background:var(--color-surface); cursor:pointer;">5,000 ج.م</button>
+              <button class="gift-amt-btn" data-amount="200" style="flex:1; min-width:70px; padding:10px; border:1px solid var(--color-border); border-radius:4px; font-size:12px; font-weight:700; background:var(--color-surface); cursor:pointer;">10,000 ج.م</button>
             </div>
           </div>
 
@@ -246,7 +246,8 @@
         btn.style.color = 'var(--color-bg)';
         btn.style.borderColor = 'var(--color-primary)';
         currentAmount = parseInt(btn.dataset.amount, 10);
-        prevAmt.textContent = `$${currentAmount}`;
+        const egpTotal = currentAmount * 50;
+        prevAmt.textContent = `${egpTotal.toLocaleString()} ج.م`;
       });
     });
 
@@ -263,10 +264,11 @@
 
     // Add to cart action
     document.getElementById('btn-add-gift-to-bag')?.addEventListener('click', () => {
+      const egpTotal = currentAmount * 50;
       const giftItem = {
         id: `gift-card-${Date.now()}`,
         slug: 'bespoke-gift-card',
-        name: `KAYAN Atelier ${currentSkin.toUpperCase()} Gift Card ($${currentAmount})`,
+        name: `بطاقة هدية كَيَان (${egpTotal.toLocaleString()} ج.م)`,
         price: currentAmount,
         salePrice: null,
         image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&auto=format&fit=crop&q=80',
@@ -276,7 +278,7 @@
       };
 
       store.addToCart(giftItem, 'Digital', currentSkin, 1);
-      toastSystem.success(`Gift card of $${currentAmount} added to your bag.`);
+      toastSystem.success(`تمت إضافة بطاقة الهدية بقيمة ${egpTotal.toLocaleString()} ج.م إلى حقيبتك.`);
       events.emit('cart:open');
     });
   </script>

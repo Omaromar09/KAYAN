@@ -8,7 +8,7 @@ export const categories = {
     id: 'women',
     name: 'Women',
     nameAr: 'النساء',
-    featuredImage: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format&fit=crop&q=80',
+    featuredImage: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&auto=format&fit=crop&q=80',
     sections: [
       {
         id: 'trending',
@@ -67,7 +67,7 @@ export const categories = {
     id: 'men',
     name: 'Men',
     nameAr: 'الرجال',
-    featuredImage: 'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=800&auto=format&fit=crop&q=80',
+    featuredImage: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&auto=format&fit=crop&q=80',
     sections: [
       {
         id: 'trending_men',

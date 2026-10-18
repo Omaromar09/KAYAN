@@ -9,12 +9,16 @@ import { calculateCartTotals } from './promotions.js';
 
 class Store {
   constructor() {
+    const savedCurr = storage.get('currency');
+    const currency = (!savedCurr || savedCurr === 'USD') ? 'EGP' : savedCurr;
+    storage.set('currency', currency);
+
     this.state = {
       cart: storage.get('cart', { items: [], appliedCoupon: null }),
       wishlist: storage.get('wishlist', []),
       department: storage.get('department', 'women'),
-      currency: storage.get('currency', 'USD'),
-      language: storage.get('language', 'en'),
+      currency: currency,
+      language: storage.get('language', 'ar'),
       theme: storage.get('theme', 'light'),
       user: storage.get('user', {
         loggedIn: false,
@@ -77,7 +81,7 @@ class Store {
     return calculateCartTotals(
       this.state.cart.items,
       this.state.cart.appliedCoupon,
-      this.state.currency
+      'USD'
     );
   }
 

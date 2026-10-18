@@ -8,7 +8,7 @@ export const CURRENCY_RATES = {
   AED: 3.67,
   EUR: 0.92,
   SAR: 3.75,
-  EGP: 48.50
+  EGP: 50.00
 };
 
 export const CURRENCY_SYMBOLS = {
@@ -16,7 +16,7 @@ export const CURRENCY_SYMBOLS = {
   AED: 'AED',
   EUR: '€',
   SAR: 'SAR',
-  EGP: 'EGP'
+  EGP: 'ج.م'
 };
 
 export const FREE_SHIPPING_THRESHOLD_USD = 150;
@@ -32,8 +32,8 @@ export const PROMO_CODES = {
 /**
  * Converts a base USD amount to a target currency
  */
-export function convertCurrency(amountUSD, targetCurrency = 'USD') {
-  const rate = CURRENCY_RATES[targetCurrency] || 1.0;
+export function convertCurrency(amountUSD, targetCurrency = 'EGP') {
+  const rate = CURRENCY_RATES[targetCurrency] || (targetCurrency === 'EGP' ? 50.00 : 1.0);
   return Math.round(amountUSD * rate * 100) / 100;
 }
 

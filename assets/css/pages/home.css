@@ -793,16 +793,43 @@
   }
 }
 
-/* Mobile Optimizations for Hero & Buttons */
+/* Mobile Optimizations for Onboarding Panels, Hero & Sections */
 @media (max-width: 768px) {
+  .onboarding-panels-wrap {
+    height: auto;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 10px;
+    background: var(--color-bg-secondary);
+  }
+  .onboarding-panel {
+    height: 135px;
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    flex: none !important;
+  }
+  .onboarding-panel:last-child {
+    grid-column: span 2;
+    height: 110px;
+  }
+  .onboarding-panel-title {
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+  }
+  .onboarding-panel-title .panel-txt-sub {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
   .hero-section {
-    min-height: 520px;
+    min-height: 500px;
   }
   .hero-title {
-    font-size: clamp(2rem, 8vw, 3.25rem);
+    font-size: clamp(1.85rem, 7.5vw, 2.75rem);
   }
   .hero-desc {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   .hero-cta-group {
     flex-direction: column;
@@ -813,7 +840,7 @@
   .btn-hero-primary,
   .btn-hero-secondary {
     justify-content: center;
-    padding: 14px 24px;
+    padding: 13px 20px;
     width: 100%;
     text-align: center;
   }
@@ -825,6 +852,6 @@
     padding: var(--space-md);
   }
   .flash-sale-box {
-    padding: 24px 16px;
+    padding: 20px 14px;
   }
 }

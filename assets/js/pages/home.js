@@ -15,6 +15,7 @@ import { initMarquees } from '../animations/marquee.js';
 import { events } from '../core/events.js';
 import { resolveUrl } from '../core/router-helpers.js';
 import { store } from '../core/store.js';
+import { i18n } from '../core/i18n.js';
 
 export function initHomePage() {
   // 1. Initialize Hero Silk Canvas
@@ -218,22 +219,22 @@ function initFeaturedTabs() {
 function initEditorialStory() {
   const storyLooks = [
     {
-      title: 'Look 01: The Architectural Trench',
-      desc: 'Layered over pure cashmere knits and high-twist wool trousers. Designed for wind and metropolitan presence.',
-      img: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=1000&auto=format&fit=crop&q=80',
+      title: 'Look 01: The Architectural Linen Trench',
+      desc: 'Layered over pure Egyptian cotton knits and high-twist wool trousers. Designed for wind and metropolitan presence.',
+      img: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1000&auto=format&fit=crop&q=80',
       productId: 'kayan-w-15',
       productName: 'Belted Technical Storm Trench',
-      productPrice: '$460',
+      priceUSD: 460,
       hotspotX: '55%',
       hotspotY: '45%'
     },
     {
-      title: 'Look 02: Sculpted Fluid Column',
+      title: 'Look 02: Sculpted Fluid Column Gown',
       desc: 'Micro-pleated chiffon column maxi engineered with kinetic drape that breathes with motion.',
       img: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=1000&auto=format&fit=crop&q=80',
       productId: 'kayan-w-02',
       productName: 'Architectural Pleated Maxi Dress',
-      productPrice: '$360',
+      priceUSD: 360,
       hotspotX: '48%',
       hotspotY: '52%'
     },
@@ -243,7 +244,7 @@ function initEditorialStory() {
       img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1000&auto=format&fit=crop&q=80',
       productId: 'kayan-w-01',
       productName: 'Sculpted Wool Cocoon Coat',
-      productPrice: '$420',
+      priceUSD: 420,
       hotspotX: '50%',
       hotspotY: '38%'
     }
@@ -273,7 +274,7 @@ function initEditorialStory() {
           <div class="hotspot-dot" style="top: ${look.hotspotY}; left: ${look.hotspotX};" data-id="${look.productId}">
             <div class="hotspot-card-popup">
               <div>${look.productName}</div>
-              <div style="color:var(--color-accent); font-weight:700;">${look.productPrice}</div>
+              <div style="color:var(--color-accent); font-weight:700;">${i18n.formatPrice(look.priceUSD)}</div>
             </div>
           </div>
         `;
@@ -357,7 +358,7 @@ function openUgcLightbox(post) {
               <img src="${taggedProd.images[0]}" style="width:48px; height:60px; border-radius:var(--radius-xs); object-fit:cover;"/>
               <div style="flex:1;">
                 <div style="font-size:13px; font-weight:600;">${taggedProd.name}</div>
-                <div style="font-size:12px; font-weight:700; color:var(--brand-bronze-light);">$${taggedProd.salePrice || taggedProd.price}</div>
+                <div style="font-size:12px; font-weight:700; color:var(--brand-bronze-light);">${i18n.formatPrice(taggedProd.salePrice || taggedProd.price)}</div>
               </div>
               <button class="btn-submit-primary btn-ugc-shop" data-id="${taggedProd.id}" style="width:auto; padding:8px 16px; font-size:11px;">Shop Piece</button>
             </div>

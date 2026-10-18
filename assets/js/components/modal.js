@@ -152,13 +152,13 @@ function initLocaleModal() {
 
           <!-- Currency -->
           <div>
-            <label class="form-label">Currency</label>
+            <label class="form-label">Currency / العملة</label>
             <select class="form-input" id="locale-currency-select" style="cursor:pointer;">
+              <option value="EGP" selected>EGP (ج.م - الجنيه المصري)</option>
               <option value="USD">USD ($ - United States Dollar)</option>
               <option value="AED">AED (د.إ - UAE Dirham)</option>
               <option value="SAR">SAR (ر.س - Saudi Riyal)</option>
               <option value="EUR">EUR (€ - Euro)</option>
-              <option value="EGP">EGP (ج.م - Egyptian Pound)</option>
             </select>
           </div>
 

@@ -35,12 +35,13 @@ export function updateCartDrawerUI() {
   const totals = store.getCartTotals();
   const items = state.cart.items;
 
-  // Free shipping text
   let shippingTextHtml = '';
   if (totals.hasFreeShipping) {
-    shippingTextHtml = `<span data-i18n="cart.free_shipping_unlocked">Complimentary Express Delivery Unlocked</span>`;
+    shippingTextHtml = `<span data-i18n="cart.free_shipping_unlocked">${state.language === 'ar' ? 'تم تفعيل الشحن السريع المجاني' : 'Complimentary Express Delivery Unlocked'}</span>`;
   } else {
-    shippingTextHtml = `Add <span class="highlight">${i18n.formatPrice(totals.freeShippingRemaining)}</span> more for Complimentary Express Delivery`;
+    shippingTextHtml = state.language === 'ar'
+      ? `أضف مشتريات بقيمة <span class="highlight">${i18n.formatPrice(totals.freeShippingRemaining)}</span> للحصول على شحن مجاني`
+      : `Add <span class="highlight">${i18n.formatPrice(totals.freeShippingRemaining)}</span> more for Complimentary Express Delivery`;
   }
 
   // Items list or Empty state

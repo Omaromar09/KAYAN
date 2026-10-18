@@ -20,7 +20,7 @@ export const translations = {
     'nav.account': 'Account',
 
     // Announcements
-    'announcement.free_shipping': 'Complimentary Global Express Delivery on orders over $150',
+    'announcement.free_shipping': 'Complimentary Global Express Delivery on orders over 2,500 EGP',
     'announcement.code': 'Enjoy 15% off your maiden acquisition with code KAYAN15',
     'announcement.equinox': 'The Equinox Archive Event: Buy 2 get 20%, Buy 3+ get 25%',
     'announcement.ends_in': 'Concludes in',
@@ -179,7 +179,7 @@ export const translations = {
     'nav.account': 'الحساب',
 
     // Announcements
-    'announcement.free_shipping': 'شحن دولي سريع مجاني للطلبات التي تتجاوز 150 دولار',
+    'announcement.free_shipping': 'شحن سريع مجاني لجميع الطلبات التي تتجاوز 2,500 ج.م',
     'announcement.code': 'استمتع بخصم 15% على طلبك الأول عبر الرمز KAYAN15',
     'announcement.equinox': 'مهرجان الاعتدال: قطعتان بخصم 20%، و3 قطع بخصم 25%',
     'announcement.ends_in': 'ينتهي خلال',

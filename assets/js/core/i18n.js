@@ -27,8 +27,8 @@ class I18nEngine {
 
   formatPrice(amountUSD, targetCurrency = null, lang = null) {
     const state = store.getState();
-    const currency = targetCurrency || state.currency || 'USD';
-    const activeLang = lang || this.currentLang || 'en';
+    const currency = targetCurrency || state.currency || 'EGP';
+    const activeLang = lang || this.currentLang || 'ar';
 
     // Get converted amount
     const rate = {
@@ -36,13 +36,18 @@ class I18nEngine {
       AED: 3.67,
       EUR: 0.92,
       SAR: 3.75,
-      EGP: 48.50
-    }[currency] || 1.0;
+      EGP: 50.00
+    }[currency] || (currency === 'EGP' ? 50.00 : 1.0);
 
     const converted = amountUSD * rate;
 
+    if (currency === 'EGP') {
+      const formattedNum = Math.round(converted).toLocaleString('en-US');
+      return activeLang === 'ar' ? `${formattedNum} ج.م` : `EGP ${formattedNum}`;
+    }
+
     try {
-      const formatter = new Intl.NumberFormat(activeLang === 'ar' ? 'ar-AE' : 'en-US', {
+      const formatter = new Intl.NumberFormat(activeLang === 'ar' ? 'ar-EG-u-nu-latn' : 'en-US', {
         style: 'currency',
         currency: currency,
         minimumFractionDigits: 0,
@@ -50,7 +55,7 @@ class I18nEngine {
       });
       return formatter.format(converted);
     } catch (e) {
-      const symbol = { USD: '$', AED: 'AED', EUR: '€', SAR: 'SAR', EGP: 'EGP' }[currency] || '$';
+      const symbol = { USD: '$', AED: 'AED', EUR: '€', SAR: 'SAR', EGP: 'ج.م' }[currency] || '$';
       return `${symbol} ${Math.round(converted)}`;
     }
   }

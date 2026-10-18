@@ -147,6 +147,36 @@ export function renderHeader() {
         </div>
       </div>
     </header>
+
+    <!-- Mobile Bottom Navigation Bar (Thumb-friendly for Phones) -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+      <a href="${resolveUrl('index.html')}" class="mobile-nav-tab ${window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || !window.location.pathname.includes('/pages/') ? 'active' : ''}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>${state.language === 'ar' ? 'الرئيسية' : 'Home'}</span>
+      </a>
+      <a href="${resolveUrl('pages/shop.html')}" class="mobile-nav-tab ${window.location.pathname.includes('shop.html') ? 'active' : ''}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>${state.language === 'ar' ? 'المتجر' : 'Shop'}</span>
+      </a>
+      <button class="mobile-nav-tab" id="mobile-nav-search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <span>${state.language === 'ar' ? 'بحث' : 'Search'}</span>
+      </button>
+      <a href="${resolveUrl('pages/wishlist.html')}" class="mobile-nav-tab ${window.location.pathname.includes('wishlist.html') ? 'active' : ''}">
+        <div class="mobile-tab-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="mobile-nav-badge ${wishlistCount > 0 ? '' : 'empty'}" id="mobile-wishlist-badge">${wishlistCount}</span>
+        </div>
+        <span>${state.language === 'ar' ? 'المفضلة' : 'Saved'}</span>
+      </a>
+      <button class="mobile-nav-tab" id="mobile-nav-cart-btn" aria-label="Shopping Bag">
+        <div class="mobile-tab-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="mobile-nav-badge ${cartTotals.itemCount > 0 ? '' : 'empty'}" id="mobile-cart-badge">${cartTotals.itemCount}</span>
+        </div>
+        <span>${state.language === 'ar' ? 'الحقيبة' : 'Bag'}</span>
+      </button>
+    </nav>
   `;
 
   initHeaderInteractions();
@@ -237,10 +267,18 @@ function initHeaderInteractions() {
   if (searchBtn) {
     searchBtn.addEventListener('click', () => events.emit('search:open'));
   }
+  const mobileSearchBtn = document.querySelector('#mobile-nav-search-btn');
+  if (mobileSearchBtn) {
+    mobileSearchBtn.addEventListener('click', () => events.emit('search:open'));
+  }
 
   const cartBtn = document.querySelector('#header-cart-btn');
   if (cartBtn) {
     cartBtn.addEventListener('click', () => events.emit('cart:open'));
+  }
+  const mobileCartBtn = document.querySelector('#mobile-nav-cart-btn');
+  if (mobileCartBtn) {
+    mobileCartBtn.addEventListener('click', () => events.emit('cart:open'));
   }
 
   const accountBtn = document.querySelector('#header-account-btn');
@@ -273,31 +311,33 @@ function initHeaderInteractions() {
   if (!window._headerEventsBound) {
     window._headerEventsBound = true;
     events.on('cart:updated', (totals) => {
-    const badge = document.querySelector('#header-cart-badge');
-    if (badge) {
-      badge.textContent = totals.itemCount;
-      if (totals.itemCount > 0) {
-        badge.classList.remove('empty');
-        badge.classList.remove('badge-pop');
-        void badge.offsetWidth; // trigger reflow
-        badge.classList.add('badge-pop');
-      } else {
-        badge.classList.add('empty');
-      }
-    }
-  });
+      const badges = document.querySelectorAll('#header-cart-badge, #mobile-cart-badge');
+      badges.forEach((badge) => {
+        badge.textContent = totals.itemCount;
+        if (totals.itemCount > 0) {
+          badge.classList.remove('empty');
+          badge.classList.remove('badge-pop');
+          void badge.offsetWidth; // trigger reflow
+          badge.classList.add('badge-pop');
+        } else {
+          badge.classList.add('empty');
+        }
+      });
+    });
 
-  events.on('wishlist:toggled', ({ count }) => {
-    const badge = document.querySelector('#header-wishlist-badge');
-    if (badge) {
-      badge.textContent = count;
-      if (count > 0) {
-        badge.classList.remove('empty');
-        badge.classList.add('badge-pop');
-      } else {
-        badge.classList.add('empty');
-      }
-    }
-  });
+    events.on('wishlist:toggled', ({ count }) => {
+      const badges = document.querySelectorAll('#header-wishlist-badge, #mobile-wishlist-badge');
+      badges.forEach((badge) => {
+        badge.textContent = count;
+        if (count > 0) {
+          badge.classList.remove('empty');
+          badge.classList.remove('badge-pop');
+          void badge.offsetWidth; // trigger reflow
+          badge.classList.add('badge-pop');
+        } else {
+          badge.classList.add('empty');
+        }
+      });
+    });
   }
 }
