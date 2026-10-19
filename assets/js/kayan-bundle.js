@@ -10439,12 +10439,12 @@ function renderFooter() {
           </button>
         </div>
 
-        <!-- Director by JOMAR Portfolio Attribution -->
+        <!-- Director by OMAR Portfolio Attribution -->
         <div class="footer-director-badge" style="text-align:center; padding:18px 0; border-top:1px solid rgba(255,255,255,0.08); margin-top:28px; font-size:13px; letter-spacing:0.04em; color:var(--color-text-muted);">
-          <span>Director by <strong style="color:var(--color-text); font-weight:700; letter-spacing:0.08em;">JOMAR</strong></span>
+          <span>Director by <strong style="color:var(--color-text); font-weight:700; letter-spacing:0.08em;">OMAR</strong></span>
           <span style="margin:0 12px; opacity:0.35;">•</span>
-          <a href="https://jomar-ojduo.me" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent); font-weight:700; text-decoration:none; border-bottom:1px solid var(--color-accent); padding-bottom:1px; transition:opacity 0.2s;">
-            jomar-ojduo.me &nearr;
+          <a href="https://7pstudio.tech" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent); font-weight:700; text-decoration:none; border-bottom:1px solid var(--color-accent); padding-bottom:1px; transition:opacity 0.2s;">
+            7pstudio.tech &nearr;
           </a>
         </div>
       </div>
